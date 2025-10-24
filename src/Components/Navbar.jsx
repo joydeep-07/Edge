@@ -103,10 +103,10 @@ const Navbar = () => {
         {/* Logo */}
         <div
           onClick={scrolltoTop}
-          className="flex items-center cursor-pointer navbar-logo"
+          className="flex items-center justify-center cursor-pointer navbar-logo"
         >
           <img
-            className="h-25 contrast-200 transition-transform duration-300"
+            className="h-10 contrast-200 transition-transform duration-300"
             src={name}
             alt="Logo"
           />
