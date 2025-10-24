@@ -119,14 +119,38 @@ const Speciality = () => {
       </div>
 
       {/* ScrollVelocity BELOW the main content, centered */}
-      <div className="mt-16 w-full flex justify-center overflow-hidden">
+      <div className="mt-10 w-full flex justify-center overflow-hidden">
         <ScrollVelocity
-          texts={["React Bits", "Scroll Down"]}
-          velocity={50} // Adjust speed here
+          texts={[
+            <>
+              {[
+                "Mongo",
+                "DB",
+                "Express",
+                "React",
+                "Node",
+                "HTML",
+                "CSS",
+                "Tailwind",
+              ].map((word, i) => (
+                <span
+                  key={i}
+                  className={`px-5 py-2 mx-2 rounded-full border border-gray-500 font-light `}
+                  style={{
+                   
+                    color: "white",
+                  }}
+                >
+                  {word}
+                </span>
+              ))}
+            </>,
+          ]}
+          velocity={100}
           parallaxClassName="w-full overflow-hidden"
-          scrollerClassName="text-[#9ef01a] font-bold text-2xl md:text-5xl"
-          numCopies={10} // More copies = seamless loop
-          stiffness={200} // Smooth movement
+          scrollerClassName="flex items-center text-3xl md:text-3xl lg:text-sm tracking-widest drop-shadow-lg"
+          numCopies={10}
+          stiffness={200}
         />
       </div>
     </section>
