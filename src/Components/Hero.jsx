@@ -1,9 +1,10 @@
 import React from 'react'
 import { ArrowUp } from "lucide-react";
+import HeroSlider from './HeroSlider';
 
 const Hero = () => {
   return (
-    <div className=" flex justify-center text-white min-h-[700px] pt-20">
+    <div className=" flex flex-col justify-center text-white min-h-[700px] pt-20">
       <div className="w-8xl h-full">
         <h2 className="pt-20 px-[70px] text-sm uppercase flex items-center gap-3">
           <span className="w-2.5 h-2.5 rounded-full bg-[#9ef01a] animate-pulse"></span>
@@ -58,6 +59,8 @@ const Hero = () => {
           </button>
         </div>
       </div>
+
+      <HeroSlider/>
     </div>
   );
 }
