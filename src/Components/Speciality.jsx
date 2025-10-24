@@ -1,5 +1,14 @@
 import React, { useState } from "react";
 import ScrollVelocity from "../../Reactbits/ScrollVelocity/ScrollVelocity";
+import {
+  SiMongodb,
+  SiExpress,
+  SiReact,
+  SiNodedotjs,
+  SiHtml5,
+  SiCss3,
+  SiTailwindcss,
+} from "react-icons/si";
 
 const Speciality = () => {
   const [active, setActive] = useState("web");
@@ -122,33 +131,36 @@ const Speciality = () => {
       <div className="mt-10 w-full flex justify-center overflow-hidden">
         <ScrollVelocity
           texts={[
-            <>
-              {[
-                "Mongo",
-                "DB",
-                "Express",
-                "React",
-                "Node",
-                "HTML",
-                "CSS",
-                "Tailwind",
-              ].map((word, i) => (
-                <span
-                  key={i}
-                  className={`px-5 py-2 mx-2 rounded-full border border-gray-500 font-light `}
-                  style={{
-                   
-                    color: "white",
-                  }}
-                >
-                  {word}
-                </span>
-              ))}
-            </>,
+            <span className="flex items-center gap-4 whitespace-nowrap">
+              <span className="flex items-center gap-1 px-4 py-2 border border-gray-600 rounded-full text-sm">
+                <SiMongodb color="#4DB33D" size={18} /> Mongo
+              </span>
+              <span className="flex items-center gap-1 px-4 py-2 border border-gray-600 rounded-full text-sm">
+                <SiMongodb color="#4DB33D" size={18} /> DB
+              </span>
+              <span className="flex items-center gap-1 px-4 py-2 border border-gray-600 rounded-full text-sm">
+                <SiExpress color="yellow" size={18} /> Express
+              </span>
+              <span className="flex items-center gap-1 px-4 py-2 border border-gray-600 rounded-full text-sm">
+                <SiReact color="#61DBFB" size={18} /> React
+              </span>
+              <span className="flex items-center gap-1 px-4 py-2 border border-gray-600 rounded-full text-sm">
+                <SiNodedotjs color="#8CC84B" size={18} /> Node
+              </span>
+              <span className="flex items-center gap-1 px-4 py-2 border border-gray-600 rounded-full text-sm">
+                <SiHtml5 color="#E34F26" size={18} /> HTML
+              </span>
+              <span className="flex items-center gap-1 px-4 py-2 border border-gray-600 rounded-full text-sm">
+                <SiCss3 color="#1572B6" size={18} /> CSS
+              </span>
+              <span className="flex items-center gap-1 px-4 py-2 border border-gray-600 rounded-full text-sm">
+                <SiTailwindcss color="#38BDF8" size={18} /> Tailwind
+              </span>
+            </span>,
           ]}
           velocity={100}
           parallaxClassName="w-full overflow-hidden"
-          scrollerClassName="flex items-center text-3xl md:text-3xl lg:text-sm tracking-widest drop-shadow-lg"
+          scrollerClassName="flex items-center text-sm md:text-sm lg:text-sm tracking-widest drop-shadow-lg"
           numCopies={10}
           stiffness={200}
         />
