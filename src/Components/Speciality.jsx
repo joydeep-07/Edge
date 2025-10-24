@@ -99,17 +99,19 @@ const Speciality = () => {
 
             {/* IMAGE SIDE */}
             <div className="w-full h-[355px] lg:w-3/5 rounded-2xl overflow-hidden border-2 border-gray-800 shadow-2xl">
-              <div className="aspect-[16/9] relative bg-gray-900">
-                <img
-                  src={specialities[active].img}
-                  alt={specialities[active].title}
-                  className={`w-full h-full object-cover transition-all duration-700 ease-in-out ${
-                    imageLoaded
-                      ? "opacity-100 scale-100"
-                      : "opacity-0 scale-105"
-                  }`}
-                  onLoad={() => setImageLoaded(true)}
-                />
+              <div className="bg-gray-900 w-full rounded-2xl overflow-hidden border-2 border-gray-800">
+                <div className="aspect-[16/9]">
+                  <img
+                    src={specialities[active].img}
+                    alt={specialities[active].title}
+                    className={`w-full h-full object-cover object-center transition-all duration-700 ease-in-out ${
+                      imageLoaded
+                        ? "opacity-100 scale-100"
+                        : "opacity-0 scale-105"
+                    }`}
+                    onLoad={() => setImageLoaded(true)}
+                  />
+                </div>
               </div>
             </div>
           </div>
