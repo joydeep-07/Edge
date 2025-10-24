@@ -43,62 +43,66 @@ const Speciality = () => {
             Areas of <span className="text-[#9ef01a]">Expertise</span>
           </h1>
 
-          <div className="flex flex-col gap-4">
-            {Object.keys(specialities).map((key) => {
-              const isActive = active === key;
-              const { title, desc } = specialities[key];
-              return (
-                <div
-                  key={key}
-                  onClick={() => setActive(key)}
-                  className={`group cursor-pointer p-6 rounded-2xl transition-all duration-500 ease-out border-2 ${
-                    isActive
-                      ? "bg-gray-900/50 border-gray-800 hover:border-gray-600 hover:bg-gray-800/30 backdrop-blur-sm"
-                      : "bg-gray-900/50 border-gray-800 hover:border-gray-600 hover:bg-gray-800/30 backdrop-blur-sm"
-                  }`}
-                >
-                  <div className="flex items-center justify-between">
-                    <h3
-                      className={`text-xl font-bold transition-colors ${
-                        isActive
-                          ? "text-white"
-                          : "text-white group-hover:text-[#9ef01a]"
-                      }`}
-                    >
-                      {title}
-                    </h3>
-                    <div
-                      className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                        isActive
-                          ? "bg-black scale-125"
-                          : "bg-gray-500 group-hover:bg-[#9ef01a]"
-                      }`}
-                    ></div>
-                  </div>
-
-                  {/* Smooth expanding description */}
+          <div className="flex">
+            <div className="flex flex-col gap-4">
+              {Object.keys(specialities).map((key) => {
+                const isActive = active === key;
+                const { title, desc } = specialities[key];
+                return (
                   <div
-                    className={`transition-all duration-700 ease-in-out overflow-hidden ${
+                    key={key}
+                    onClick={() => setActive(key)}
+                    className={`group cursor-pointer p-6 rounded-2xl transition-all duration-500 ease-out border-2 ${
                       isActive
-                        ? "max-h-32 mt-4 opacity-100"
-                        : "max-h-0 opacity-0"
+                        ? "bg-gray-900/50 border-gray-800 hover:border-gray-600 hover:bg-gray-800/30 backdrop-blur-sm"
+                        : "bg-gray-900/50 border-gray-800 hover:border-gray-600 hover:bg-gray-800/30 backdrop-blur-sm"
                     }`}
                   >
-                    <p
-                      className={`text-sm leading-relaxed ${
-                        isActive ? "text-gray-300" : "text-gray-400"
+                    <div className="flex items-center justify-between">
+                      <h3
+                        className={`text-xl font-bold transition-colors ${
+                          isActive
+                            ? "text-white"
+                            : "text-white group-hover:text-[#9ef01a]"
+                        }`}
+                      >
+                        {title}
+                      </h3>
+                      <div
+                        className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                          isActive
+                            ? "bg-black scale-125"
+                            : "bg-gray-500 group-hover:bg-[#9ef01a]"
+                        }`}
+                      ></div>
+                    </div>
+
+                    {/* Smooth expanding description */}
+                    <div
+                      className={`transition-all duration-700 ease-in-out overflow-hidden ${
+                        isActive
+                          ? "max-h-32 mt-4 opacity-100"
+                          : "max-h-0 opacity-0"
                       }`}
                     >
-                      {desc}
-                    </p>
+                      <p
+                        className={`text-sm leading-relaxed ${
+                          isActive ? "text-gray-300" : "text-gray-400"
+                        }`}
+                      >
+                        {desc}
+                      </p>
+                    </div>
                   </div>
-                </div>
-              );
-            })}
+                );
+              })}
+            </div>
+
+            <div className="border-2 w-[300px] ml-4 rounded-xl border-gray-800">
+              {/* nothing */}
+            </div>
           </div>
         </div>
-
-        
       </div>
     </section>
   );
