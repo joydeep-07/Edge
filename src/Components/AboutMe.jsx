@@ -87,7 +87,7 @@ const AboutMe = () => {
             <h2 className="text-sm font-semibold uppercase tracking-widest text-gray-300 mb-3">
               About Me
             </h2>
-            <div className="w-16 h-0.5 bg-[#9ef01a] mx-auto"></div>
+            <div className="w-16 h-0.5 bg-green-500 mx-auto"></div>
           </div>
         </div>
 

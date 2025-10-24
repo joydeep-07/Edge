@@ -7,12 +7,12 @@ const Hero = () => {
     <div className=" flex flex-col justify-center text-white min-h-[700px] pt-20">
       <div className="w-8xl h-full">
         <h2 className="pt-20 px-[70px] text-sm uppercase flex items-center gap-3">
-          <span className="w-2.5 h-2.5 rounded-full bg-[#9ef01a] animate-pulse"></span>
+          <span className="w-2.5 h-2.5 rounded-full bg-green-500 animate-pulse"></span>
           Hey, it’s me Paul
         </h2>
         <h1 className="pt-5 px-[70px] font-medium text-7xl">
           Crafting{" "}
-          <span className="text-[#9ef01a] mr-4">
+          <span className="text-green-500 mr-4">
             purpose driven <br /> experiences
           </span>
           that inspire <br /> & engage.
@@ -60,7 +60,7 @@ const Hero = () => {
         </div>
       </div>
 
-      <HeroSlider/>
+      <HeroSlider />
     </div>
   );
 }

@@ -43,14 +43,14 @@ const Speciality = () => {
         {/* LEFT SIDE */}
         <div className="flex-1 text-left w-full">
           <div className="flex items-center gap-3 mb-4">
-            <div className="w-12 h-0.5 bg-[#9ef01a]"></div>
-            <h2 className="text-sm font-semibold uppercase tracking-widest text-[#9ef01a]">
+            <div className="w-12 h-0.5 bg-green-500"></div>
+            <h2 className="text-sm font-semibold uppercase tracking-widest text-green-500">
               Speciality
             </h2>
           </div>
 
           <h1 className="text-5xl lg:text-6xl font-medium mb-12 text-white text-center lg:text-left">
-            Areas of <span className="text-[#9ef01a]">Expertise</span>
+            Areas of <span className="text-green-500">Expertise</span>
           </h1>
 
           <div className="flex flex-col lg:flex-row gap-8 w-full">

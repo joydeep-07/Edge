@@ -4,3 +4,38 @@
   font-size: 2.5rem !important;
   line-height: 1.5;
 }
+
+
+/* Global — makes all text selections green with white text */
+::selection {
+  background: #16a34a; /* green (Tailwind green-600) — change to any hex you like */
+  color: #ffffff;      /* text color while selected */
+}
+
+::-moz-selection {     /* Firefox */
+  background: #16a34a;
+  color: #ffffff;
+}
+
+/* Target a specific element (example: only paragraphs with .my-text) */
+.my-text::selection {
+  background: #10b981; /* slightly different green if you want */
+  color: #ffffff;
+}
+.my-text::-moz-selection {
+  background: #10b981;
+  color: #ffffff;
+}
+
+/* Inputs & textareas (modern browsers support ::selection here too) */
+input::selection,
+textarea::selection {
+  background: #16a34a;
+  color: #ffffff;
+}
+input::-moz-selection,
+textarea::-moz-selection {
+  background: #16a34a;
+  color: #ffffff;
+}
+
