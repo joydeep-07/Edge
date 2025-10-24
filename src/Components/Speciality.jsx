@@ -98,7 +98,7 @@ const Speciality = () => {
             </div>
 
             {/* IMAGE SIDE */}
-            <div className="w-full lg:w-3/5 rounded-2xl overflow-hidden border-2 border-gray-800 shadow-2xl">
+            <div className="w-full h-[355px] lg:w-3/5 rounded-2xl overflow-hidden border-2 border-gray-800 shadow-2xl">
               <div className="aspect-[16/9] relative bg-gray-900">
                 <img
                   src={specialities[active].img}
@@ -110,8 +110,6 @@ const Speciality = () => {
                   }`}
                   onLoad={() => setImageLoaded(true)}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-gray-900/20 to-transparent"></div>
-               
               </div>
             </div>
           </div>
