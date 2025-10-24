@@ -54,7 +54,7 @@ const Speciality = () => {
                     onClick={() => setActive(key)}
                     className={`group cursor-pointer p-6 rounded-2xl transition-all duration-500 ease-out border-2 ${
                       isActive
-                        ? "bg-gray-900/50 border-[#9ef01a]/30 shadow-lg shadow-[#9ef01a]/10"
+                        ? "bg-gray-900/50 border-gray-700 shadow-lg shadow-gray-500/10"
                         : "bg-gray-900/30 border-gray-800 hover:border-gray-700 hover:bg-gray-900/40"
                     }`}
                   >
@@ -62,17 +62,17 @@ const Speciality = () => {
                       <h3
                         className={`text-xl font-bold transition-colors ${
                           isActive
-                            ? "text-[#9ef01a]"
-                            : "text-white group-hover:text-[#9ef01a]"
+                            ? "text-white"
+                            : "text-white]"
                         }`}
                       >
                         {title}
                       </h3>
                       <div
-                        className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                        className={`w-2 h-2 rounded-full transition-all duration-300 ${
                           isActive
-                            ? "bg-[#9ef01a] scale-125 shadow-lg shadow-[#9ef01a]/50"
-                            : "bg-gray-500 group-hover:bg-[#9ef01a]"
+                            ? "bg-white shadow-lg shadow-[#9ef01a]/50"
+                            : "bg-gray-600 "
                         }`}
                       ></div>
                     </div>
