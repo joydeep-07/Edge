@@ -22,7 +22,7 @@ const Navbar = () => {
     // GSAP animation for navbar shrink
     const ctx = gsap.context(() => {
       gsap.to(navRef.current, {
-        width: "80%", // Reduced width
+        width: "75%", // Reduced width
         borderRadius: "50px", // Rounded corners
         margin: "20px auto", // Centered position
         border: "1px solid rgba(200,200,200,0.3)", // Light gray border
