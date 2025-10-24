@@ -128,32 +128,37 @@ const Speciality = () => {
       </div>
 
       {/* ScrollVelocity BELOW the main content, centered */}
-      <div className="mt-10 w-full flex justify-center overflow-hidden">
+      <div className="relative mt-10 w-full flex justify-center overflow-hidden bg-black py-5">
+        {/* Left fade */}
+        <div className="absolute left-0 top-0 bottom-0 w-[300px] bg-gradient-to-r from-black to-transparent z-10 pointer-events-none" />
+        {/* Right fade */}
+        <div className="absolute right-0 top-0 bottom-0 w-[300px] bg-gradient-to-l from-black to-transparent z-10 pointer-events-none" />
+
         <ScrollVelocity
           texts={[
             <span className="flex items-center gap-4 whitespace-nowrap">
-              <span className="flex items-center gap-1 px-4 py-2 border border-gray-600 rounded-full text-sm">
+              <span className="text-gray-400 font-medium flex items-center gap-1 px-4 py-2 border border-gray-600 rounded-full text-sm">
                 <SiMongodb color="#4DB33D" size={15} /> Mongo
               </span>
-              <span className="flex items-center gap-1 px-4 py-2 border border-gray-600 rounded-full text-sm">
+              <span className="text-gray-400 font-medium flex items-center gap-1 px-4 py-2 border border-gray-600 rounded-full text-sm">
                 <SiMongodb color="#4DB33D" size={15} /> DB
               </span>
-              <span className="flex items-center gap-1 px-4 py-2 border border-gray-600 rounded-full text-sm">
+              <span className="text-gray-400 font-medium flex items-center gap-1 px-4 py-2 border border-gray-600 rounded-full text-sm">
                 <SiExpress color="yellow" size={15} /> Express
               </span>
-              <span className="flex items-center gap-1 px-4 py-2 border border-gray-600 rounded-full text-sm">
+              <span className="text-gray-400 font-medium flex items-center gap-1 px-4 py-2 border border-gray-600 rounded-full text-sm">
                 <SiReact color="#61DBFB" size={15} /> React
               </span>
-              <span className="flex items-center gap-1 px-4 py-2 border border-gray-600 rounded-full text-sm">
+              <span className="text-gray-400 font-medium flex items-center gap-1 px-4 py-2 border border-gray-600 rounded-full text-sm">
                 <SiNodedotjs color="#8CC84B" size={15} /> Node
               </span>
-              <span className="flex items-center gap-1 px-4 py-2 border border-gray-600 rounded-full text-sm">
+              <span className="text-gray-400 font-medium flex items-center gap-1 px-4 py-2 border border-gray-600 rounded-full text-sm">
                 <SiHtml5 color="#E34F26" size={15} /> HTML
               </span>
-              <span className="flex items-center gap-1 px-4 py-2 border border-gray-600 rounded-full text-sm">
+              <span className="text-gray-400 font-medium flex items-center gap-1 px-4 py-2 border border-gray-600 rounded-full text-sm">
                 <SiCss3 color="#1572B6" size={15} /> CSS
               </span>
-              <span className="flex items-center gap-1 px-4 py-2 border border-gray-600 rounded-full text-sm">
+              <span className="text-gray-400 font-medium flex items-center gap-1 px-4 py-2 border border-gray-600 rounded-full text-sm">
                 <SiTailwindcss color="#38BDF8" size={15} /> Tailwind
               </span>
             </span>,
