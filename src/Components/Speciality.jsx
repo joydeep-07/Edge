@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import ScrollVelocity from "../../Reactbits/ScrollVelocity/ScrollVelocity";
 
 const Speciality = () => {
   const [active, setActive] = useState("web");
@@ -23,11 +24,12 @@ const Speciality = () => {
   };
 
   return (
-    <section className="text-white py-24 flex justify-center relative overflow-hidden">
+    <section className="text-white py-24 flex flex-col justify-center items-center relative overflow-visible">
       {/* Background glow effects */}
       <div className="absolute top-10 right-10 w-32 h-32 bg-[#9ef01a] rounded-full blur-3xl opacity-10"></div>
       <div className="absolute bottom-10 left-10 w-40 h-40 bg-[#9ef01a] rounded-full blur-3xl opacity-5"></div>
 
+      {/* Main content */}
       <div className="w-full max-w-7xl px-6 lg:px-8 flex flex-col lg:flex-row items-center lg:items-start gap-16 relative z-10">
         {/* LEFT SIDE */}
         <div className="flex-1 text-left w-full">
@@ -38,7 +40,7 @@ const Speciality = () => {
             </h2>
           </div>
 
-          <h1 className="text-5xl lg:text-6xl font-medium mb-12 text-white">
+          <h1 className="text-5xl lg:text-6xl font-medium mb-12 text-white text-center lg:text-left">
             Areas of <span className="text-[#9ef01a]">Expertise</span>
           </h1>
 
@@ -61,9 +63,7 @@ const Speciality = () => {
                     <div className="flex items-center justify-between">
                       <h3
                         className={`text-xl font-bold transition-colors ${
-                          isActive
-                            ? "text-white"
-                            : "text-white]"
+                          isActive ? "text-white" : "text-gray-300"
                         }`}
                       >
                         {title}
@@ -72,7 +72,7 @@ const Speciality = () => {
                         className={`w-2 h-2 rounded-full transition-all duration-300 ${
                           isActive
                             ? "bg-white shadow-lg shadow-[#9ef01a]/50"
-                            : "bg-gray-600 "
+                            : "bg-gray-600"
                         }`}
                       ></div>
                     </div>
@@ -116,6 +116,18 @@ const Speciality = () => {
             </div>
           </div>
         </div>
+      </div>
+
+      {/* ScrollVelocity BELOW the main content, centered */}
+      <div className="mt-16 w-full flex justify-center overflow-hidden">
+        <ScrollVelocity
+          texts={["React Bits", "Scroll Down"]}
+          velocity={50} // Adjust speed here
+          parallaxClassName="w-full overflow-hidden"
+          scrollerClassName="text-[#9ef01a] font-bold text-2xl md:text-5xl"
+          numCopies={10} // More copies = seamless loop
+          stiffness={200} // Smooth movement
+        />
       </div>
     </section>
   );
