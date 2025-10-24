@@ -11,7 +11,7 @@ const Hero = () => {
         </h2>
         <h1 className="pt-5 px-[70px] font-medium text-7xl">
           Crafting{" "}
-          <span className="text-[#9ef01a]">
+          <span className="text-[#9ef01a] mr-4">
             purpose driven <br /> experiences
           </span>
           that inspire <br /> & engage.
