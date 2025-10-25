@@ -9,7 +9,7 @@ import name from "../assets/images/logo.png";
 gsap.registerPlugin(ScrollTrigger);
 
 const Navbar = () => {
-  const navItems = ["Home", "Qualification", "Projects", "Experience"];
+  const navItems = ["Home", "Expertise", "Projects", "Experience"];
   const navRef = useRef(null);
 
   useEffect(() => {
@@ -77,7 +77,7 @@ const Navbar = () => {
 
     const idMap = {
       Projects: "projects",
-      Experience: "experience",
+      Expertise: "expertise",
       Qualification: "about",
     };
 
