@@ -19,7 +19,7 @@ const Me = () => {
             <div className="absolute -bottom-10 -right-10">
               <CircularText
                 text="LET'S TALK • LET'S TALK • LET'S TALK • "
-                radius={40}
+                radius={30}
                 fontSize={10}
                 rotateSpeed={40}
                 direction="clockwise"

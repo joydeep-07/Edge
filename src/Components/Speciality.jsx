@@ -34,7 +34,7 @@ const Speciality = () => {
   };
 
   return (
-    <section id="expertise" className="text-white pt-24 flex flex-col justify-center items-center relative overflow-visible">
+    <section id="expertise" className="text-white pt-30 flex flex-col justify-center items-center relative overflow-visible">
       {/* Background glow effects */}
       <div className="absolute top-10 right-10 w-32 h-32 bg-[#9ef01a] rounded-full blur-3xl opacity-10"></div>
       <div className="absolute bottom-10 left-10 w-40 h-40 bg-[#9ef01a] rounded-full blur-3xl opacity-5"></div>
