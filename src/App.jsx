@@ -5,7 +5,7 @@ import Lenis from "@studio-freight/lenis";
 const App = () => {
   useEffect(() => {
     const lenis = new Lenis({
-      duration: 1.2, 
+      duration: 0.5, 
       smooth: true,
       direction: "vertical",
       gestureDirection: "vertical",
