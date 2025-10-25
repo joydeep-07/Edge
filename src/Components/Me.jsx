@@ -12,7 +12,6 @@ const Me = () => {
               src={me}
               alt="Joydeep Paul"
             />
-           
           </div>
         </div>
 
@@ -30,11 +29,22 @@ const Me = () => {
           </p>
 
           <div>
-            <button
-              className="px-8 py-3 border border-[#9ef01a] rounded-full text-sm font-medium
-                         hover:bg-[#9ef01a] hover:text-black transition-all duration-300 shadow-[0_0_15px_#9ef01a30]"
-            >
-              Download Resume
+            <button className="px-10 sm:px-4 py-4 sm:py-4 bg-transparent border-2 border-white/30 text-white font-medium tracking-widest rounded-full hover:border-white/70 transition-all duration-700 group relative overflow-hidden">
+              {/* Sliding gradient overlay */}
+              <span className="absolute inset-0 bg-white/0 opacity-0 group-hover:opacity-100 transition-opacity duration-1000 -translate-x-full group-hover:translate-x-0"></span>
+
+              {/* Text wrapper */}
+              <span className="relative w-36 sm:w-40 flex items-center justify-center">
+                {/* Initial text */}
+                <span className="opacity-100 group-hover:opacity-0 text-white translate-y-0 group-hover:-translate-y-2 transition-all duration-500 flex items-center space-x-3">
+                  <span className="text-xs">RESUME</span>
+                </span>
+
+                {/* Hover text */}
+                <span className="absolute inset-0 text-white opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-500 flex items-center justify-center space-x-3">
+                  <span className="text-xs">DOWNLOAD</span>
+                </span>
+              </span>
             </button>
           </div>
         </div>
