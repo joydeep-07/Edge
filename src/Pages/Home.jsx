@@ -5,12 +5,14 @@ import AboutMe from '../Components/AboutMe'
 import Speciality from '../Components/Speciality'
 import Reviews from '../Components/Reviews'
 import Footer from '../Components/Footer'
+import Me from '../Components/Me'
 
 const Home = () => {
   return (
     <div className="bg-black">
       <Navbar />
       <Hero />
+      <Me/>
       <AboutMe />
       <Speciality />
       {/* <Reviews /> */}

@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Me from "./Me";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -76,6 +77,7 @@ const AboutMe = () => {
   return (
     <section className=" relative overflow-hidden">
       {/* Background glow layers */}
+   
       <div className="absolute inset-0">
         <div className="absolute top-1/3 left-1/4 w-96 h-50 bg-blue-500/20 rounded-full blur-[160px]"></div>
       </div>
