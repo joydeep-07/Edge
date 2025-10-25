@@ -1,17 +1,31 @@
 import React from "react";
-import me from '../assets/images/full.jpg'
+import me from "../assets/images/full.jpg";
+import CircularText from "../../Reactbits/CircularText/CircularText";
+
 const Me = () => {
   return (
     <section className="flex justify-center items-center pb-5 pt-26 bg-black text-white">
       <div className="max-w-7xl w-full flex flex-col md:flex-row items-center gap-20 px-6 md:px-12">
         {/* IMAGE SIDE */}
-        <div className=" flex">
+        <div className="flex relative">
           <div className="relative group">
             <img
-              className="h-130 w-100 object-cover rounded-b-full transition-all duration-500 "
+              className="h-130 w-100 object-cover rounded-b-full transition-all duration-500"
               src={me}
               alt="Joydeep Paul"
             />
+
+            {/* CIRCULAR TEXT IN BOTTOM-RIGHT */}
+            <div className="absolute -bottom-10 -right-10">
+              <CircularText
+                text="LET'S TALK • LET'S TALK • LET'S TALK • "
+                radius={40}
+                fontSize={10}
+                rotateSpeed={40}
+                direction="clockwise"
+                textColor="#9ef01a"
+              />
+            </div>
           </div>
         </div>
 
