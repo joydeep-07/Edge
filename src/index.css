@@ -6,20 +6,20 @@
 }
 
 
-/* Global — makes all text selections green with white text */
+
 ::selection {
-  background: #16a34a; /* green (Tailwind green-600) — change to any hex you like */
-  color: #ffffff;      /* text color while selected */
+  background: #16a34a;
+  color: #ffffff;     
 }
 
-::-moz-selection {     /* Firefox */
+::-moz-selection {    
   background: #16a34a;
   color: #ffffff;
 }
 
-/* Target a specific element (example: only paragraphs with .my-text) */
+
 .my-text::selection {
-  background: #10b981; /* slightly different green if you want */
+  background: #10b981; 
   color: #ffffff;
 }
 .my-text::-moz-selection {
@@ -27,7 +27,6 @@
   color: #ffffff;
 }
 
-/* Inputs & textareas (modern browsers support ::selection here too) */
 input::selection,
 textarea::selection {
   background: #16a34a;
@@ -40,7 +39,6 @@ textarea::-moz-selection {
 }
 
 
-/* Ultra Minimal Premium Scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -63,4 +61,5 @@ textarea::-moz-selection {
   scrollbar-width: thin;
   scrollbar-color: #2c2c2c #000000;
 }
+
 
