@@ -23,11 +23,7 @@ const Me = () => {
                 fontSize={10}
                 rotateSpeed={40}
                 direction="clockwise"
-<<<<<<< HEAD
                 textColor="white"
-=======
-                textColor="#9ef01a"
->>>>>>> a38c9427f2d51dc0caec7c7d6a0c68eec8a53000
               />
             </div>
           </div>
