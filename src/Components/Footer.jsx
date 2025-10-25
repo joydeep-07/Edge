@@ -15,7 +15,7 @@ const Footer = () => {
           Let’s create your <br /> next big idea.
         </h1>
 
-        <button className="mt-8 px-8 py-3 rounded-full border border-gray-500 hover:bg-green-600 hover:border-green-600 transition-all duration-300 text-white">
+        <button className="mt-8 px-8 py-2 rounded-full border border-gray-500 transition-all duration-300 text-white">
           Contact
         </button>
       </div>
