@@ -5,7 +5,7 @@ import HeroSlider from './HeroSlider';
 const Hero = () => {
   return (
     <div id='home' className=" flex flex-col justify-center text-white min-h-[700px] pt-20">
-      <div className="w-8xl h-full pb-10">
+      <div className="w-8xl h-full pb-5">
         <h2 className="pt-20 px-[70px] text-sm uppercase flex items-center gap-3">
           <span className="w-2.5 h-2.5 rounded-full bg-green-500 animate-pulse"></span>
           Hey, it’s me Paul
@@ -40,7 +40,7 @@ const Hero = () => {
             ))}
           </div>
 
-          <button className="px-10 sm:px-4 py-4 sm:py-4 bg-transparent border-2 border-white/30 text-white font-medium tracking-widest rounded-full hover:border-white/70 transition-all duration-700 group relative overflow-hidden">
+          <button className="px-10 mt-5 sm:px-4 py-4 sm:py-4 bg-transparent border-2 border-white/30 text-white font-medium tracking-widest rounded-full hover:border-white/70 transition-all duration-700 group relative overflow-hidden">
             {/* Sliding gradient overlay */}
             <span className="absolute inset-0 bg-white/0 opacity-0 group-hover:opacity-100 transition-opacity duration-1000 -translate-x-full group-hover:translate-x-0"></span>
 
