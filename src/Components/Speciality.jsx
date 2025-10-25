@@ -10,7 +10,6 @@ import {
   SiTailwindcss,
 } from "react-icons/si";
 import { IoIosArrowDown } from "react-icons/io";
-import SplitText  from "../../Reactbits/SplitText/SplitText";
 
 const Speciality = () => {
   const [active, setActive] = useState("web");
