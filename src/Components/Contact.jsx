@@ -1,4 +1,7 @@
 import React, { useState } from "react";
+import { FaInstagram, FaLinkedin, FaGithub } from "react-icons/fa";
+import { HiOutlineMail } from "react-icons/hi";
+import me from '../assets/images/dp.jpg'
 
 const Contact = () => {
   // Step 1: Create state for form fields
@@ -20,7 +23,7 @@ const Contact = () => {
   // Step 3: Handle form submit
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Form Data:", formData); // ✅ Print form data to console
+    console.log("Form Data:", formData); 
   };
 
   return (
@@ -121,7 +124,65 @@ const Contact = () => {
 
         {/* Right Box - Decorative / Equal Height */}
         <div className="right w-1/2">
-          <div className="w-full h-[330px] rounded-2xl bg-gray-900/50"></div>
+          <div className="w-full h-[330px] rounded-2xl bg-gray-900/50 flex flex-col items-start p-6 space-y-4">
+            {/* Batch */}
+            <div className="flex items-center gap-2 bg-green-600/30 px-4 py-2 rounded-full">
+              <span className="h-2 w-2 rounded-full animate-pulse bg-green-500"></span>
+              <span className="text-xs font-medium text-white">
+                Available to work
+              </span>
+            </div>
+
+            {/* Profile Image */}
+            <div className="border border-gray-700/80 p-3 rounded-full">
+              <img
+                className="h-24 w-24 rounded-full border border-gray-500 object-cover"
+                src={me}
+                alt="Profile"
+              />
+            </div>
+
+            {/* Description */}
+            <p className="text-gray-200 text-sm">
+              My inbox is always open, Whether you have a project or just want
+              to say Hi. I would love to hear from you. Feel free to contact me
+              and I'll get back to you.
+            </p>
+
+            {/* Social Media Icons */}
+            <div className="flex gap-4 mt-2">
+              <a
+                href="https://instagram.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-pink-500 transition-colors duration-300"
+              >
+                <FaInstagram size={22} />
+              </a>
+              <a
+                href="https://linkedin.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-blue-500 transition-colors duration-300"
+              >
+                <FaLinkedin size={22} />
+              </a>
+              <a
+                href="https://github.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-green-500 transition-colors duration-300"
+              >
+                <FaGithub size={22} />
+              </a>
+              <a
+                href="mailto:example@email.com"
+                className="text-gray-400 hover:text-yellow-400 transition-colors duration-300"
+              >
+                <HiOutlineMail size={22} />
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
