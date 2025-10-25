@@ -39,3 +39,28 @@ textarea::-moz-selection {
   color: #ffffff;
 }
 
+
+/* Ultra Minimal Premium Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000000;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333333;
+  border-radius: 4px;
+  transition: background 0.2s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #444444;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #2c2c2c #000000;
+}
+

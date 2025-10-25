@@ -9,7 +9,7 @@ import {
   SiCss3,
   SiTailwindcss,
 } from "react-icons/si";
-
+import { IoIosArrowDown } from "react-icons/io";
 const Speciality = () => {
   const [active, setActive] = useState("web");
   const [imageLoaded, setImageLoaded] = useState(false);
@@ -33,7 +33,7 @@ const Speciality = () => {
   };
 
   return (
-    <section className="text-white py-24 flex flex-col justify-center items-center relative overflow-visible">
+    <section className="text-white flex flex-col justify-center items-center relative overflow-visible">
       {/* Background glow effects */}
       <div className="absolute top-10 right-10 w-32 h-32 bg-[#9ef01a] rounded-full blur-3xl opacity-10"></div>
       <div className="absolute bottom-10 left-10 w-40 h-40 bg-[#9ef01a] rounded-full blur-3xl opacity-5"></div>
@@ -63,7 +63,7 @@ const Speciality = () => {
                   <div
                     key={key}
                     onClick={() => setActive(key)}
-                    className={`group cursor-pointer p-6 rounded-2xl transition-all duration-500 ease-out border-2 ${
+                    className={`group cursor-pointer p-6 rounded-2xl transition-all duration-500 ease-out border-[1.5px] ${
                       isActive
                         ? "bg-gray-900/50 border-gray-700 shadow-lg shadow-gray-500/10"
                         : "bg-gray-900/30 border-gray-800 hover:border-gray-700 hover:bg-gray-900/40"
@@ -71,19 +71,21 @@ const Speciality = () => {
                   >
                     <div className="flex items-center justify-between">
                       <h3
-                        className={`text-xl font-bold transition-colors ${
+                        className={`text-md font-medium transition-colors ${
                           isActive ? "text-white" : "text-gray-300"
                         }`}
                       >
                         {title}
                       </h3>
                       <div
-                        className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                        className={`transition-all duration-300 ${
                           isActive
-                            ? "bg-white shadow-lg shadow-[#9ef01a]/50"
-                            : "bg-gray-600"
+                            ? " shadow-lg rotate-180"
+                            : "text-gray-400"
                         }`}
-                      ></div>
+                      >
+                        <IoIosArrowDown />
+                      </div>
                     </div>
 
                     <div
@@ -107,8 +109,8 @@ const Speciality = () => {
             </div>
 
             {/* IMAGE SIDE */}
-            <div className="w-full h-[355px] lg:w-3/5 rounded-2xl overflow-hidden border-2 border-gray-800 shadow-2xl">
-              <div className="bg-gray-900 w-full rounded-2xl overflow-hidden border-2 border-gray-800">
+            <div className="w-full h-[355px] lg:w-3/5 rounded-2xl overflow-hidden border-[1.5px] border-gray-800 shadow-2xl">
+              <div className="bg-gray-900 w-full rounded-2xl overflow-hidden">
                 <div className="aspect-[16/9]">
                   <img
                     src={specialities[active].img}
