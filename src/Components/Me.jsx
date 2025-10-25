@@ -32,7 +32,7 @@ const Me = () => {
         {/* TEXT SIDE */}
         <div className="flex-1 flex flex-col justify-center text-center md:text-left space-y-6">
           <h1 className="text-4xl md:text-6xl font-semibold leading-tight">
-            A creative <span className="text-[#9ef01a]">developer</span> &
+            A creative <span className="text-green-500">developer</span> &
             digital designer
           </h1>
 
