@@ -4,7 +4,7 @@ import CircularText from "../../Reactbits/CircularText/CircularText";
 
 const Me = () => {
   return (
-    <section id="about" className="flex justify-center items-center pb-5 pt-26 bg-black text-white">
+    <section className="flex justify-center items-center pb-5 pt-26 bg-black text-white">
       <div className="max-w-7xl w-full flex flex-col md:flex-row items-center gap-20 px-6 md:px-12">
         {/* IMAGE SIDE */}
         <div className="flex relative">
