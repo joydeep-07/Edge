@@ -27,7 +27,7 @@ const Contact = () => {
   };
 
   return (
-    <div className="flex flex-col justify-center items-center text-white">
+    <div className="flex flex-col justify-center items-center pt-30 text-white">
       {/* Header */}
       <div className="w-7xl">
         <div className="flex items-center gap-3 mb-4">

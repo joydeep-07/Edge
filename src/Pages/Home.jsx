@@ -10,13 +10,13 @@ import Me from '../Components/Me'
 const Home = () => {
   return (
     <div className="bg-black">
-      <Navbar />
+      {/* <Navbar /> */}
       <Hero />
       <Me/>
       <AboutMe />
       <Speciality />
       {/* <Reviews /> */}
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }
