@@ -5,7 +5,7 @@
   line-height: 1.5;
 }
 
-
+/* ==================================== SELECTION ====================================  */
 
 ::selection {
   background: #16a34a;
@@ -39,6 +39,10 @@ textarea::-moz-selection {
 }
 
 
+/* ==================================== SELECTION ====================================  */
+
+/* ==================================== SCROLLBAR ====================================  */
+
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -63,3 +67,41 @@ textarea::-moz-selection {
 }
 
 
+/* ==================================== SCROLLBAR ====================================  */
+
+/* ==================================== INPUT FIELD ====================================  */
+
+/* ✅ Chrome, Edge, Safari */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 1000px transparent inset !important;
+  box-shadow: 0 0 0 1000px transparent inset !important;
+  -webkit-text-fill-color: #ffffff !important; /* force white text */
+  background-color: transparent !important;
+  transition: background-color 9999s ease-in-out 0s; /* prevent flash */
+}
+
+/* ✅ Firefox */
+input:-moz-autofill {
+  box-shadow: 0 0 0 1000px transparent inset !important;
+  -moz-text-fill-color: #ffffff !important; /* white text */
+  background-color: transparent !important;
+}
+
+/* Optional: your normal input style */
+input {
+  background: transparent;
+  color: #ffffff;
+  padding: 0.6rem 0.8rem;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+input:focus {
+  border-color: #0a7f35; /* Tailwind's green-500 */
+}
+
+
+/* ==================================== INPUT FIELD ====================================  */
