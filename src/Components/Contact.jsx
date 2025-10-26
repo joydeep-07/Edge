@@ -3,6 +3,7 @@ import { FaInstagram, FaLinkedin, FaGithub } from "react-icons/fa";
 import { HiOutlineMail } from "react-icons/hi";
 import me from '../assets/images/dp.jpg'
 import AboutMe from "./AboutMe";
+import SplitText from "../../Reactbits/SplitText/SplitText";
 
 const Contact = () => {
   // Step 1: Create state for form fields
@@ -19,6 +20,10 @@ const Contact = () => {
       ...prevData,
       [id]: value,
     }));
+  };
+
+  const handleAnimationComplete = () => {
+    console.log("Animation complete!");
   };
 
   // Step 3: Handle form submit
@@ -38,12 +43,43 @@ const Contact = () => {
           </h2>
         </div>
 
-        <h1 className="text-5xl lg:text-5xl font-medium mb-12 text-center lg:text-left">
+        {/* <h1 className="text-5xl lg:text-5xl font-medium mb-12 text-center lg:text-left">
           Let's start a{" "}
           <span className="text-green-500">
             Project <br /> Together
           </span>
-        </h1>
+        </h1> */}
+
+        <SplitText
+          text="Let's start a"
+          className="text-5xl lg:text-5xl font-medium text-center lg:text-left leading-[1.1]" // Increase line-height slightly
+          delay={100}
+          duration={0.4}
+          ease="power2.out"
+          splitType="chars"
+          from={{ opacity: 0, y: 40 }}
+          to={{ opacity: 1, y: 0 }}
+          threshold={0.1}
+          rootMargin="-100px"
+          textAlign="center"
+        />
+
+        {/* Green second line */}
+        <div className="text-green-500 mt-1 leading-[1.1]">
+          <SplitText
+            text="Project Together"
+            className="text-5xl lg:text-5xl font-medium text-center lg:text-left leading-[1.4]"
+            delay={100}
+            duration={0.4}
+            ease="power2.out"
+            splitType="chars"
+            from={{ opacity: 0, y: 40 }}
+            to={{ opacity: 1, y: 0 }}
+            threshold={0.1}
+            rootMargin="-100px"
+            textAlign="center"
+          />
+        </div>
       </div>
 
       {/* Contact Section */}
@@ -187,7 +223,7 @@ const Contact = () => {
         </div>
       </div>
 
-      <AboutMe/>
+      <AboutMe />
     </div>
   );
 };
