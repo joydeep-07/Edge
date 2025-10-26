@@ -101,7 +101,7 @@ const Contact = () => {
                 value={formData.name}
                 onChange={handleChange}
                 placeholder="Your name"
-                className="w-full px-4 py-2 border-b border-gray-700 focus:outline-none focus:ring-2 focus:ring-green-500 placeholder-gray-500 transition-all duration-300"
+                className="w-full px-4 py-2 border-b border-gray-700 outline-none placeholder-gray-500 transition-all duration-300"
               />
             </div>
 
@@ -119,7 +119,7 @@ const Contact = () => {
                 value={formData.email}
                 onChange={handleChange}
                 placeholder="you@example.com"
-                className="w-full px-4 py-2 border-b border-gray-700 focus:outline-none focus:ring-2 focus:ring-green-500 placeholder-gray-500 transition-all duration-300"
+                className="w-full px-4 py-2 border-b border-gray-700 outline-none placeholder-gray-500 transition-all duration-300"
               />
             </div>
 
@@ -137,7 +137,7 @@ const Contact = () => {
                 value={formData.message}
                 onChange={handleChange}
                 placeholder="Your message..."
-                className="w-full px-4 py-2 border-b border-gray-700 resize-none focus:outline-none focus:ring-2 focus:ring-green-500 placeholder-gray-500 transition-all duration-300"
+                className="w-full px-4 py-2 rounded-lg border border-gray-700 outline-none placeholder-gray-500 transition-all duration-300"
               ></textarea>
             </div>
 
