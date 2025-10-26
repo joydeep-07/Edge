@@ -30,6 +30,11 @@ const Contact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Form Data:", formData); 
+     setFormData({
+       name: "",
+       email: "",
+       message: "",
+     });
   };
 
   return (

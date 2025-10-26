@@ -71,26 +71,24 @@ textarea::-moz-selection {
 
 /* ==================================== INPUT FIELD ====================================  */
 
-/* ✅ Chrome, Edge, Safari */
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
   -webkit-box-shadow: 0 0 0 1000px transparent inset !important;
   box-shadow: 0 0 0 1000px transparent inset !important;
-  -webkit-text-fill-color: #ffffff !important; /* force white text */
+  -webkit-text-fill-color: #ffffff !important;
   background-color: transparent !important;
-  transition: background-color 9999s ease-in-out 0s; /* prevent flash */
+  transition: background-color 9999s ease-in-out 0s; 
 }
 
-/* ✅ Firefox */
 input:-moz-autofill {
   box-shadow: 0 0 0 1000px transparent inset !important;
-  -moz-text-fill-color: #ffffff !important; /* white text */
+  -moz-text-fill-color: #ffffff !important; 
   background-color: transparent !important;
 }
 
-/* Optional: your normal input style */
+
 input {
   background: transparent;
   color: #ffffff;
@@ -100,7 +98,7 @@ input {
 }
 
 input:focus {
-  border-color: #0a7f35; /* Tailwind's green-500 */
+  border-color: #0a7f35; 
 }
 
 
