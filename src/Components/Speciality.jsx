@@ -10,6 +10,7 @@ import {
   SiTailwindcss,
 } from "react-icons/si";
 import { IoIosArrowDown } from "react-icons/io";
+import { FaPenNib } from "react-icons/fa";
 
 const Speciality = () => {
   const [active, setActive] = useState("web");
@@ -72,17 +73,15 @@ const Speciality = () => {
                   >
                     <div className="flex items-center justify-between">
                       <h3
-                        className={`text-md font-medium transition-colors ${
+                        className={`text-md flex gap-3 items-center justify-center font-medium transition-colors ${
                           isActive ? "text-white" : "text-gray-300"
                         }`}
                       >
-                        {title}
+                        <FaPenNib className=" text-sm" /> <span>{title}</span>
                       </h3>
                       <div
                         className={`transition-all duration-300 ${
-                          isActive
-                            ? " shadow-lg rotate-180"
-                            : "text-gray-400"
+                          isActive ? " shadow-lg rotate-180" : "text-gray-400"
                         }`}
                       >
                         <IoIosArrowDown />
