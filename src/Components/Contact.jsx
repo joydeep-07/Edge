@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { FaInstagram, FaLinkedin, FaGithub } from "react-icons/fa";
 import { HiOutlineMail } from "react-icons/hi";
 import me from '../assets/images/dp.jpg'
+import AboutMe from "./AboutMe";
 
 const Contact = () => {
   // Step 1: Create state for form fields
@@ -185,6 +186,8 @@ const Contact = () => {
           </div>
         </div>
       </div>
+
+      <AboutMe/>
     </div>
   );
 };

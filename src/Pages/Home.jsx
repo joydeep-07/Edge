@@ -6,6 +6,7 @@ import Speciality from '../Components/Speciality'
 import Reviews from '../Components/Reviews'
 import Footer from '../Components/Footer'
 import Me from '../Components/Me'
+import WorkBadge from '../Components/WorkBadge'
 
 const Home = () => {
   return (
@@ -15,6 +16,7 @@ const Home = () => {
       <Me/>
       <AboutMe />
       <Speciality />
+      <WorkBadge/>
       {/* <Reviews /> */}
       {/* <Footer /> */}
     </div>

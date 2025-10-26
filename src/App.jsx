@@ -4,6 +4,7 @@ import Lenis from "@studio-freight/lenis";
 import Home from "./Pages/Home";
 import Contact from "./Components/Contact";
 import Root from "./layout/Root";
+import ScrollToTop from "./utils/ScrollToTop";
 
 const App = () => {
   useEffect(() => {
@@ -16,17 +17,26 @@ const App = () => {
       touchMultiplier: 1.5,
     });
 
+    // store it globally so we can use it elsewhere
+    window.__lenisInstance = lenis;
+
     function raf(time) {
       lenis.raf(time);
       requestAnimationFrame(raf);
     }
 
     requestAnimationFrame(raf);
-    return () => lenis.destroy();
+    return () => {
+      lenis.destroy();
+      delete window.__lenisInstance;
+    };
   }, []);
 
   return (
     <Router>
+      {/* Scroll to top on route change */}
+      <ScrollToTop />
+
       <Routes>
         <Route path="/" element={<Root />}>
           <Route index element={<Home />} />
