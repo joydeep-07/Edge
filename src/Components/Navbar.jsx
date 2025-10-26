@@ -4,13 +4,35 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import name from "../assets/images/logo.png";
+import { useNavigate, useLocation } from "react-router-dom";
 
-// Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);
 
 const Navbar = () => {
   const navItems = ["Home", "Expertise", "Projects", "Experience"];
   const navRef = useRef(null);
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  // ✅ Click logo → navigate home or scroll smoothly to top
+  const handleLogoClick = () => {
+    const lenis = window.__lenisInstance;
+
+    if (location.pathname === "/") {
+      // already on home → just smooth scroll to top
+      if (lenis) lenis.scrollTo(0, { duration: 1.2 });
+      else window.scrollTo({ top: 0, behavior: "smooth" });
+    } else {
+      // navigate to home
+      navigate("/");
+
+      // after navigation, start smooth scroll to top (slight delay to allow render)
+      setTimeout(() => {
+        if (lenis) lenis.scrollTo(0, { duration: 1.2 });
+        else window.scrollTo({ top: 0, behavior: "smooth" });
+      }, 100);
+    }
+  };
 
   useEffect(() => {
     Aos.init({
@@ -19,15 +41,15 @@ const Navbar = () => {
       once: true,
     });
 
-    // GSAP animation for navbar shrink
+    // GSAP navbar animation
     const ctx = gsap.context(() => {
       gsap.to(navRef.current, {
-        width: "75%", // Reduced width
-        borderRadius: "50px", // Rounded corners
-        margin: "20px auto", // Centered position
-        border: "1px solid rgba(200,200,200,0.3)", // Light gray border
-        backgroundColor: "rgba(30,30,30,0.4)", // Subtle dark gray shade
-        backdropFilter: "blur(8px)", // Smooth glassy blur
+        width: "75%",
+        borderRadius: "50px",
+        margin: "20px auto",
+        border: "1px solid rgba(200,200,200,0.3)",
+        backgroundColor: "rgba(30,30,30,0.4)",
+        backdropFilter: "blur(8px)",
         duration: 0.6,
         ease: "power2.out",
         scrollTrigger: {
@@ -39,7 +61,6 @@ const Navbar = () => {
         },
       });
 
-      // Slightly reduce logo size
       gsap.to(".navbar-logo", {
         scale: 0.9,
         duration: 0.5,
@@ -52,7 +73,6 @@ const Navbar = () => {
         },
       });
 
-      // Reduce navbar height
       gsap.to(navRef.current, {
         height: "60px",
         duration: 0.5,
@@ -66,12 +86,14 @@ const Navbar = () => {
       });
     }, navRef);
 
-    return () => ctx.revert(); // Cleanup GSAP context
+    return () => ctx.revert();
   }, []);
 
   const scrollToSection = (section) => {
     if (section === "Home") {
-      window.scrollTo({ top: 0, behavior: "smooth" });
+      const lenis = window.__lenisInstance;
+      if (lenis) lenis.scrollTo(0, { duration: 1.2 });
+      else window.scrollTo({ top: 0, behavior: "smooth" });
       return;
     }
 
@@ -83,12 +105,10 @@ const Navbar = () => {
 
     const element = document.getElementById(idMap[section]);
     if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+      const lenis = window.__lenisInstance;
+      if (lenis) lenis.scrollTo(element, { duration: 1.2 });
+      else element.scrollIntoView({ behavior: "smooth" });
     }
-  };
-
-  const scrolltoTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   return (
@@ -100,9 +120,9 @@ const Navbar = () => {
       style={{ width: "100%" }}
     >
       <div className="max-w-8xl mx-auto flex justify-between items-center h-[70px] px-6 md:px-20">
-        {/* Logo */}
+        {/* ✅ Logo with smooth scroll + route change */}
         <div
-          onClick={scrolltoTop}
+          onClick={handleLogoClick}
           className="flex items-center justify-center cursor-pointer navbar-logo"
         >
           <img
@@ -122,11 +142,9 @@ const Navbar = () => {
               onClick={() => scrollToSection(item)}
               className="relative group h-7 leading-7 overflow-hidden cursor-pointer select-none"
             >
-              {/* Original text */}
               <span className="block text-sm transition-transform duration-500 ease-out group-hover:-translate-y-full group-hover:text-gray-100">
                 {item}
               </span>
-              {/* Cloned hover text */}
               <span
                 className="block text-sm absolute inset-0 translate-y-full transition-transform duration-500 ease-out group-hover:translate-y-0 text-gray-100"
                 aria-hidden="true"
