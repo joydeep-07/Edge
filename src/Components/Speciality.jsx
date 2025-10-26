@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import ScrollVelocity from "../../Reactbits/ScrollVelocity/ScrollVelocity";
+import SplitText from "../../Reactbits/SplitText/SplitText";
 import {
   SiMongodb,
   SiExpress,
@@ -35,7 +36,10 @@ const Speciality = () => {
   };
 
   return (
-    <section id="expertise" className="text-white pt-30 flex flex-col justify-center items-center relative overflow-visible">
+    <section
+      id="expertise"
+      className="text-white pt-30 flex flex-col justify-center items-center relative overflow-visible"
+    >
       {/* Background glow effects */}
       <div className="absolute top-10 right-10 w-32 h-32 bg-[#9ef01a] rounded-full blur-3xl opacity-10"></div>
       <div className="absolute bottom-10 left-10 w-40 h-40 bg-[#9ef01a] rounded-full blur-3xl opacity-5"></div>
@@ -51,9 +55,19 @@ const Speciality = () => {
             </h2>
           </div>
 
-          <h1 className="text-5xl lg:text-6xl font-medium mb-12 text-white text-center lg:text-left">
-            Areas of <span className="text-green-500">Expertise</span>
-          </h1>
+          <SplitText
+            text="Areas of Expertise"
+            className="text-5xl lg:text-6xl font-medium mb-12 text-white text-center lg:text-left leading-[1.1]" // Increase line-height slightly
+            delay={100}
+            duration={0.4}
+            ease="power2.out"
+            splitType="chars"
+            from={{ opacity: 0, y: 40 }}
+            to={{ opacity: 1, y: 0 }}
+            threshold={0.1}
+            rootMargin="-100px"
+            textAlign="center"
+          />
 
           <div className="flex flex-col lg:flex-row gap-8 w-full">
             {/* LEFT LIST */}
