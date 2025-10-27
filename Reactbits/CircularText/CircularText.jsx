@@ -85,11 +85,11 @@ const CircularText = ({
   };
 
   return (
-    <div className="relative w-[150px] h-[150px] mx-auto">
+    <div className="relative border border-gray-500/20 bg-black p-1 rounded-full w-[145px] h-[145px] mx-auto">
       {/* Fixed Center Icon - Outside the rotating element */}
       <div
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 
-                   text-sm p-7 rounded-full bg-white/20 z-10 rotate-45 flex items-center justify-center"
+                   text-sm p-6 rounded-full bg-white/20 z-10 rotate-45 flex items-center justify-center"
       >
         <FaArrowUp />
       </div>
