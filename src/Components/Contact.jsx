@@ -48,13 +48,6 @@ const Contact = () => {
           </h2>
         </div>
 
-        {/* <h1 className="text-5xl lg:text-5xl font-medium mb-12 text-center lg:text-left">
-          Let's start a{" "}
-          <span className="text-green-500">
-            Project <br /> Together
-          </span>
-        </h1> */}
-
         <SplitText
           text="Let's start a"
           className="text-5xl lg:text-5xl font-medium text-center lg:text-left leading-[1.1]" // Increase line-height slightly
