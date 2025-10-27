@@ -5,7 +5,7 @@ import projects from "../utils/data/projects";
 
 const Projects = () => {
   return (
-    <div className="flex flex-col justify-center items-center text-white px-6 py-16">
+    <div id="projects" className="flex flex-col justify-center items-center text-white px-6 pb-16 pt-30">
       <div className="w-full max-w-7xl">
         {/* Section Header */}
         <div className="flex items-center gap-3 mb-4">
