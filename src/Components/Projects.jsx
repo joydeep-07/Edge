@@ -40,7 +40,7 @@ const Projects = () => {
             <SpotlightCard
               spotlightColor="#132a13"
               key={project.id}
-              className="bg-gray-900/40 z-1 backdrop-blur-md border border-gray-700/50 rounded-xl hover:border-green-500/20 hover:shadow-lg hover:shadow-green-500/10 transition-all duration-300 flex flex-col p-6 cursor-pointer"
+              className="z-1 backdrop-blur-md transition-all duration-300 flex flex-col p-6 cursor-pointer"
             >
               <a
                 href={project.link}
