@@ -54,24 +54,24 @@ const ContactFaq = () => {
         </div>
 
         {/* RIGHT: FAQ List */}
-        <div className="lg:w-1.5/2 flex  pt-15 flex-col gap-4">
+        <div className="lg:w-1.5/2 flex  pt-15 flex-col gap-3">
           {faqData.map((item, index) => (
             <div
               key={index}
-              className="border border-gray-700 rounded-2xl overflow-hidden hover:border-green-500 transition-all duration-300"
+              className="border border-gray-700/20 rounded-2xl bg-gray-700/15 overflow-hidden transition-all duration-300"
             >
               {/* Question */}
               <button
                 onClick={() => toggleFaq(index)}
                 className="w-full flex justify-between items-center p-6 text-left focus:outline-none"
               >
-                <h3 className="text-lg md:text-xl font-semibold text-white">
+                <h3 className="text-lg md:text-[15px] text-gray-200">
                   {item.question}
                 </h3>
                 {openIndex === index ? (
-                  <IoChevronUp className="text-green-500 text-2xl transition-transform duration-300" />
+                  <IoChevronUp className="text-gray-100 text-sm transition-transform duration-300" />
                 ) : (
-                  <IoChevronDown className="text-green-500 text-2xl transition-transform duration-300" />
+                  <IoChevronUp className="text-gray-500 rotate-180 text-sm transition-transform ease-in duration-300" />
                 )}
               </button>
 
@@ -83,7 +83,7 @@ const ContactFaq = () => {
                     : "max-h-0 opacity-0 p-0"
                 }`}
               >
-                <p className="text-gray-400 leading-relaxed">{item.answer}</p>
+                <p className="text-gray-400 text-lg md:text-[15px] leading-relaxed">{item.answer}</p>
               </div>
             </div>
           ))}
