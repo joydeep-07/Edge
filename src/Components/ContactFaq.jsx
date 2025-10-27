@@ -63,9 +63,14 @@ const ContactFaq = () => {
                 onClick={() => toggleFaq(index)}
                 className="w-full flex justify-between items-center p-6 text-left focus:outline-none"
               >
-                <h3 className="text-lg md:text-[15px] text-gray-200">
-                  {item.question}
-                </h3>
+                <div className="flex items-center gap-3">
+                  <span className="text-gray-100 text-sm md:text-base ">
+                    {String(index + 1).padStart(2, "0")}.
+                  </span>
+                  <h3 className="text-lg md:text-[15px] text-gray-200">
+                    {item.question}
+                  </h3>
+                </div>
                 {openIndex === index ? (
                   <IoChevronUp className="text-gray-100 text-sm transition-transform duration-400 ease-[cubic-bezier(0.4,0,0.2,1)]" />
                 ) : (
