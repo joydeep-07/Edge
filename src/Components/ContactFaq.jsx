@@ -56,7 +56,7 @@ const ContactFaq = () => {
           {faqData.map((item, index) => (
             <div
               key={index}
-              className="border border-gray-700/20 rounded-2xl bg-gray-700/15 overflow-hidden transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] will-change-transform will-change-opacity"
+              className="border border-gray-700/20 rounded-2xl bg-gray-700/15 overflow-hidden transition-all duration-400 ease-[cubic-bezier(0.4,0,0.2,1)]"
             >
               {/* Question */}
               <button
@@ -67,15 +67,15 @@ const ContactFaq = () => {
                   {item.question}
                 </h3>
                 {openIndex === index ? (
-                  <IoChevronUp className="text-gray-100 text-sm transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]" />
+                  <IoChevronUp className="text-gray-100 text-sm transition-transform duration-400 ease-[cubic-bezier(0.4,0,0.2,1)]" />
                 ) : (
-                  <IoChevronUp className="text-gray-500 rotate-180 text-sm transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]" />
+                  <IoChevronUp className="text-gray-500 rotate-180 text-sm transition-transform duration-400 ease-[cubic-bezier(0.4,0,0.2,1)]" />
                 )}
               </button>
 
               {/* Answer */}
               <div
-                className={`overflow-hidden transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] ${
+                className={`overflow-hidden transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] ${
                   openIndex === index
                     ? "max-h-48 opacity-100 translate-y-0"
                     : "max-h-0 opacity-0 -translate-y-2"
