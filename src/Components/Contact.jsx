@@ -4,6 +4,7 @@ import { HiOutlineMail } from "react-icons/hi";
 import me from '../assets/images/dp.jpg'
 import AboutMe from "./AboutMe";
 import SplitText from "../../Reactbits/SplitText/SplitText";
+import ContactFaq from "./ContactFaq";
 
 const Contact = () => {
   // Step 1: Create state for form fields
@@ -221,7 +222,7 @@ const Contact = () => {
         </div>
       </div>
 
-      <AboutMe />
+      <ContactFaq/>
     </div>
   );
 };
