@@ -16,7 +16,7 @@ const Me = () => {
             />
 
             {/* CIRCULAR TEXT IN BOTTOM-RIGHT */}
-            <div className="absolute -bottom-10 -right-10">
+            <div className="absolute -bottom-5 -right-10">
               <CircularText
                 text="LET'S TALK • LET'S TALK • LET'S TALK • "
                 radius={30}
