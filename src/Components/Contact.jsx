@@ -4,6 +4,7 @@ import { HiOutlineMail } from "react-icons/hi";
 import me from '../assets/images/dp.jpg'
 import SplitText from "../../Reactbits/SplitText/SplitText";
 import ContactFaq from "./ContactFaq";
+import { supabase } from "../supabaseClient";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -21,15 +22,30 @@ const Contact = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("Form Data:", formData); 
-     setFormData({
-       name: "",
-       email: "",
-       message: "",
-     });
-  };
+ const handleSubmit = async (e) => {
+   e.preventDefault();
+
+   const { name, email, message } = formData;
+
+   if (!name || !email || !message) {
+     alert("Please fill all fields");
+     return;
+   }
+
+   const { data, error } = await supabase
+     .from("Contacts") 
+     .insert([{ name, email, message }]);
+
+   if (error) {
+     console.error("Supabase error:", error.message);
+     alert("Something went wrong! Check the console.");
+   } else {
+     console.log("Data inserted successfully:", data);
+     alert("Message sent successfully!");
+     setFormData({ name: "", email: "", message: "" });
+   }
+ };
+
 
   return (
     <div className="flex flex-col justify-center items-center pt-30 text-white">
