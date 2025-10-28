@@ -1,10 +1,16 @@
 import React, { useEffect, useState } from "react";
 import { supabase } from "../supabaseClient";
 import SplitText from "../../Reactbits/SplitText/SplitText";
+import { IoChevronUp } from "react-icons/io5";
 
 const Messages = () => {
   const [messages, setMessages] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [openIndex, setOpenIndex] = useState(null);
+
+  const toggleMessage = (index) => {
+    setOpenIndex(openIndex === index ? null : index);
+  };
 
   useEffect(() => {
     const fetchMessages = async () => {
@@ -13,11 +19,8 @@ const Messages = () => {
         .select("*")
         .order("created_at", { ascending: false });
 
-      if (error) {
-        console.error("Error fetching messages:", error.message);
-      } else {
-        setMessages(data);
-      }
+      if (error) console.error("Error fetching messages:", error.message);
+      else setMessages(data);
       setLoading(false);
     };
 
@@ -41,101 +44,115 @@ const Messages = () => {
   }
 
   return (
-    <div className="w-full min-h-[730px] bg-black py-20 relative overflow-hidden">
-      {/* Premium Background Elements */}
-
-      <div className="relative w-full max-w-7xl mx-auto px-6">
-        {/* Premium Header Section */}
-        <div className="mb-16 pt-10">
-          <div className="flex  items-center gap-4 ">
-            <div className="w-16 h-px bg-gradient-to-r from-transparent to-green-500"></div>
-            <span className="text-xs font-medium tracking-[0.3em] text-emerald-400/80 uppercase">
-              Communications
-            </span>
-            <div className="w-16 h-px bg-gradient-to-l from-transparent to-green-500"></div>
+    <div className="w-full flex justify-center items-start py-20 bg-black relative overflow-hidden">
+      <div className="w-full max-w-7xl mx-auto flex flex-col lg:flex-row gap-10 px-6">
+        {/* LEFT: Sticky Header */}
+        <div className="lg:w-1/2 sticky top-20 pt-10 h-fit self-start">
+          <div className="flex items-center gap-3 mb-4">
+            <div className="w-12 h-0.5 bg-green-500"></div>
+            <h2 className="text-sm font-semibold uppercase tracking-widest text-green-500">
+              Inbox
+            </h2>
           </div>
 
           <SplitText
-            text="Your Messages"
-            className="text-6xl lg:text-7xl font-light leading-[1.4]   tracking-tight"
+            text="Your"
+            className="text-5xl lg:text-4xl font-medium text-left leading-[1.1] text-white"
             delay={100}
-            duration={0.4}
-            ease="power2.out"
+            duration={0.6}
+            ease="power3.out"
             splitType="chars"
             from={{ opacity: 0, y: 40 }}
             to={{ opacity: 1, y: 0 }}
             threshold={0.1}
             rootMargin="-100px"
           />
+
+          <div className="text-green-500 mt-1 leading-[1.1]">
+            <SplitText
+              text="Messages"
+              className="text-5xl lg:text-4xl font-medium text-left leading-[1.4]"
+              delay={100}
+              duration={0.6}
+              ease="power3.out"
+              splitType="chars"
+              from={{ opacity: 0, y: 40 }}
+              to={{ opacity: 1, y: 0 }}
+              threshold={0.1}
+              rootMargin="-100px"
+            />
+          </div>
+
+          <p className="text-gray-400 mt-5 max-w-md">
+            View messages submitted through the contact form. Click to expand
+            each message for full details.
+          </p>
         </div>
 
-        {/* Premium Messages Grid */}
-        {messages.length === 0 ? (
-          <div className="text-center py-20">
-            <div className="w-24 h-24 mx-auto mb-6 rounded-full bg-white/5 flex items-center justify-center">
-              <svg
-                className="w-10 h-10 text-gray-500"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={1.5}
-                  d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2M4 13h2m8-8V4a1 1 0 00-1-1h-2a1 1 0 00-1 1v1m4 0h-4"
-                />
-              </svg>
+        {/* RIGHT: Messages Accordion */}
+        <div className="lg:w-1.5/2 flex flex-col gap-3 pt-10">
+          {messages.length === 0 ? (
+            <div className="text-gray-500 italic text-lg py-10">
+              No messages found in your inbox.
             </div>
-            <p className="text-gray-500 text-lg font-light italic">
-              No messages found in your inbox
-            </p>
-          </div>
-        ) : (
-          <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-6">
-            {messages.map((msg) => (
+          ) : (
+            messages.map((msg, index) => (
               <div
                 key={msg.id}
-                className="group relative backdrop-blur-xl bg-gradient-to-br from-white/5 to-white/2 border border-white/10 rounded-2xl p-8 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-emerald-500/10"
+                className="border border-gray-700/20 rounded-2xl bg-gray-700/15 overflow-hidden transition-all duration-400 ease-[cubic-bezier(0.4,0,0.2,1)]"
               >
-                {/* Premium Card Background Effects */}
-                <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/5 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                <div className="absolute inset-0 rounded-2xl border border-emerald-400/0 group-hover:border-emerald-400/20 transition-colors duration-500"></div>
-
-                {/* Content */}
-                <div className="relative">
-                  <div className="flex justify-between items-start mb-6">
-                    <div>
-                      <h2 className="text-xl font-semibold text-white mb-1 group-hover:text-emerald-300 transition-colors duration-300">
+                {/* Header */}
+                <button
+                  onClick={() => toggleMessage(index)}
+                  className="w-full flex justify-between items-center p-6 text-left focus:outline-none"
+                >
+                  <div className="flex flex-col md:flex-row md:items-center gap-3">
+                    <div className="flex items-center gap-2">
+                      <span className="text-gray-100 text-sm md:text-base font-light">
+                        {String(index + 1).padStart(2, "0")}.
+                      </span>
+                      <h3 className="text-lg md:text-[15px] text-gray-200 font-semibold">
                         {msg.name}
-                      </h2>
-                      <p className="text-sm text-emerald-400/80 leading-relaxed ">
-                        {msg.email}
-                      </p>
+                      </h3>
                     </div>
-                    <span className="text-xs text-gray-500 font-light bg-white/5 rounded-full px-3 py-1">
+                    <p className="text-sm text-green-400/80 md:ml-3">
+                      {msg.email}
+                    </p>
+                  </div>
+                  {openIndex === index ? (
+                    <IoChevronUp className="text-gray-100 text-sm transition-transform duration-400 ease-[cubic-bezier(0.4,0,0.2,1)]" />
+                  ) : (
+                    <IoChevronUp className="text-gray-500 rotate-180 text-sm transition-transform duration-400 ease-[cubic-bezier(0.4,0,0.2,1)]" />
+                  )}
+                </button>
+
+                {/* Body */}
+                <div
+                  className={`overflow-hidden transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] ${
+                    openIndex === index
+                      ? "max-h-64 opacity-100 translate-y-0"
+                      : "max-h-0 opacity-0 -translate-y-2"
+                  }`}
+                  style={{ willChange: "transform, opacity, max-height" }}
+                >
+                  <div className="p-6 pt-0">
+                    <p className="text-gray-400 text-[15px] leading-relaxed">
+                      {msg.message}
+                    </p>
+                    <p className="text-gray-500 text-sm mt-4">
+                      Sent on:{" "}
                       {new Date(msg.created_at).toLocaleDateString("en-US", {
                         month: "short",
                         day: "numeric",
                         year: "numeric",
                       })}
-                    </span>
-                  </div>
-
-                  <div className="relative">
-                    <div className="absolute -left-3 top-0 w-0.5 h-full bg-gradient-to-b from-emerald-400/40 to-transparent group-hover:from-emerald-400/80 transition-colors duration-300"></div>
-                    <p className="text-gray-300/90 leading-relaxed text-sm font-light pl-2">
-                      {msg.message}
                     </p>
                   </div>
                 </div>
-
-                {/* Hover Glow Effect */}
-                <div className="absolute inset-0 -z-10 opacity-0 group-hover:opacity-100 blur-xl transition duration-700 bg-gradient-to-br from-emerald-400/10 to-emerald-600/5 rounded-2xl"></div>
               </div>
-            ))}
-          </div>
-        )}
+            ))
+          )}
+        </div>
       </div>
     </div>
   );
