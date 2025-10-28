@@ -1,16 +1,19 @@
 import React from "react";
 import { FaInstagram, FaXTwitter, FaLinkedin, FaGithub } from "react-icons/fa6";
-
+import { useNavigate } from "react-router-dom";
 const Footer = () => {
+   const navigate = useNavigate();
   return (
     <>
       <footer className="bg-black text-gray-300 flex flex-col items-center justify-center pb-8 px-6 space-y-10">
         {/* Call to Action */}
-       
 
         {/* Bottom Section */}
         <div className="w-full max-w-7xl flex flex-col md:flex-row items-center justify-between border-t border-gray-800 pt-6">
-          <p className="text-sm text-gray-400">
+          <p
+            onClick={() => navigate("/messages")}
+            className="text-sm cursor-pointer text-gray-400"
+          >
             © {new Date().getFullYear()} All Rights Reserved.
           </p>
 
