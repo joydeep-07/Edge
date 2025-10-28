@@ -11,20 +11,20 @@ const ContactFaq = () => {
   };
 
   return (
-    <div className="w-full flex justify-center items-start py-16">
-      <div className="w-7xl max-w-7xl mx-auto flex flex-col lg:flex-row gap-10">
+    <div className="w-full flex justify-center items-start py-8 sm:py-12 md:py-16 px-4 sm:px-6 lg:px-8">
+      <div className="w-full max-w-7xl mx-auto flex flex-col lg:flex-row gap-6 sm:gap-8 lg:gap-10">
         {/* LEFT: Sticky Header */}
-        <div className="lg:w-1/2 sticky top-20 pt-15 h-fit self-start">
+        <div className="lg:w-1/2 lg:sticky lg:top-20 pt-8 sm:pt-12 lg:pt-15 h-fit self-start">
           <div className="flex items-center gap-3 mb-4">
-            <div className="w-12 h-0.5 bg-green-500"></div>
-            <h2 className="text-sm font-semibold uppercase tracking-widest text-green-500">
+            <div className="w-8 sm:w-10 lg:w-12 h-0.5 bg-green-500"></div>
+            <h2 className="text-xs sm:text-sm font-semibold uppercase tracking-widest text-green-500">
               Questions
             </h2>
           </div>
 
           <SplitText
             text="Frequently"
-            className="text-5xl lg:text-4xl font-medium text-left leading-[1.1] text-white"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-4xl font-medium text-left leading-[1.1] text-white"
             delay={100}
             duration={0.6}
             ease="power3.out"
@@ -38,7 +38,7 @@ const ContactFaq = () => {
           <div className="text-green-500 mt-1 leading-[1.1]">
             <SplitText
               text="Asked Questions"
-              className="text-5xl lg:text-4xl font-medium text-left leading-[1.4]"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-4xl font-medium text-left leading-[1.4]"
               delay={100}
               duration={0.6}
               ease="power3.out"
@@ -52,29 +52,29 @@ const ContactFaq = () => {
         </div>
 
         {/* RIGHT: FAQ List */}
-        <div className="lg:w-1.5/2 flex pt-15 flex-col gap-3">
+        <div className="lg:w-1.5/2 flex pt-8 sm:pt-12 lg:pt-15 flex-col gap-3 sm:gap-4">
           {faqData.map((item, index) => (
             <div
               key={index}
-              className="border border-gray-700/20 rounded-2xl bg-gray-700/15 overflow-hidden transition-all duration-400 ease-[cubic-bezier(0.4,0,0.2,1)]"
+              className="border border-gray-700/20 rounded-xl sm:rounded-2xl bg-gray-700/15 overflow-hidden transition-all duration-400 ease-[cubic-bezier(0.4,0,0.2,1)]"
             >
               {/* Question */}
               <button
                 onClick={() => toggleFaq(index)}
-                className="w-full flex justify-between items-center p-6 text-left focus:outline-none"
+                className="w-full flex justify-between items-center p-4 sm:p-5 lg:p-6 text-left focus:outline-none"
               >
                 <div className="flex items-center gap-3">
-                  <span className="text-gray-100 text-sm md:text-base ">
+                  <span className="text-gray-100 text-xs sm:text-sm md:text-base">
                     {String(index + 1).padStart(2, "0")}.
                   </span>
-                  <h3 className="text-lg md:text-[15px] text-gray-200">
+                  <h3 className="text-base sm:text-lg md:text-[15px] text-gray-200 pr-2 sm:pr-4">
                     {item.question}
                   </h3>
                 </div>
                 {openIndex === index ? (
-                  <IoChevronUp className="text-gray-100 text-sm transition-transform duration-400 ease-[cubic-bezier(0.4,0,0.2,1)]" />
+                  <IoChevronUp className="text-gray-100 text-xs sm:text-sm transition-transform duration-400 ease-[cubic-bezier(0.4,0,0.2,1)] flex-shrink-0" />
                 ) : (
-                  <IoChevronUp className="text-gray-500 rotate-180 text-sm transition-transform duration-400 ease-[cubic-bezier(0.4,0,0.2,1)]" />
+                  <IoChevronUp className="text-gray-500 rotate-180 text-xs sm:text-sm transition-transform duration-400 ease-[cubic-bezier(0.4,0,0.2,1)] flex-shrink-0" />
                 )}
               </button>
 
@@ -87,8 +87,8 @@ const ContactFaq = () => {
                 }`}
                 style={{ willChange: "transform, opacity, max-height" }}
               >
-                <div className="p-6 pt-0">
-                  <p className="text-gray-400 text-lg md:text-[15px] leading-relaxed">
+                <div className="p-4 sm:p-5 lg:p-6 pt-0 sm:pt-0 lg:pt-0">
+                  <p className="text-gray-400 text-base sm:text-lg md:text-[15px] leading-relaxed">
                     {item.answer}
                   </p>
                 </div>
