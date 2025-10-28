@@ -44,10 +44,10 @@ const Messages = () => {
   }
 
   return (
-    <div className="w-full flex justify-center items-start py-20 bg-black relative overflow-hidden">
-      <div className="w-full max-w-7xl mx-auto flex flex-col lg:flex-row gap-10 px-6">
+    <div className="w-full border min-h-[90vh] bg-black py-20 relative overflow-hidden flex  justify-center items-start">
+      <div className="w-full max-w-7xl mx-auto flex flex-col  gap-10 px-6 items-start">
         {/* LEFT: Sticky Header */}
-        <div className="lg:w-1/2 sticky top-20 pt-10 h-fit self-start">
+        <div className=" border p-4">
           <div className="flex items-center gap-3 mb-4">
             <div className="w-12 h-0.5 bg-green-500"></div>
             <h2 className="text-sm font-semibold uppercase tracking-widest text-green-500">
@@ -56,7 +56,7 @@ const Messages = () => {
           </div>
 
           <SplitText
-            text="Your"
+            text="Your Messages"
             className="text-5xl lg:text-4xl font-medium text-left leading-[1.1] text-white"
             delay={100}
             duration={0.6}
@@ -68,21 +68,6 @@ const Messages = () => {
             rootMargin="-100px"
           />
 
-          <div className="text-green-500 mt-1 leading-[1.1]">
-            <SplitText
-              text="Messages"
-              className="text-5xl lg:text-4xl font-medium text-left leading-[1.4]"
-              delay={100}
-              duration={0.6}
-              ease="power3.out"
-              splitType="chars"
-              from={{ opacity: 0, y: 40 }}
-              to={{ opacity: 1, y: 0 }}
-              threshold={0.1}
-              rootMargin="-100px"
-            />
-          </div>
-
           <p className="text-gray-400 mt-5 max-w-md">
             View messages submitted through the contact form. Click to expand
             each message for full details.
@@ -90,7 +75,7 @@ const Messages = () => {
         </div>
 
         {/* RIGHT: Messages Accordion */}
-        <div className="lg:w-1.5/2 flex flex-col gap-3 pt-10">
+        <div className="lg:w-full  flex flex-col gap-4">
           {messages.length === 0 ? (
             <div className="text-gray-500 italic text-lg py-10">
               No messages found in your inbox.
@@ -109,7 +94,7 @@ const Messages = () => {
                   <div className="flex flex-col md:flex-row md:items-center gap-3">
                     <div className="flex items-center gap-2">
                       <span className="text-gray-100 text-sm md:text-base font-light">
-                        {String(index + 1).padStart(2, "0")}.
+                        {String(index + 1).padStart(2, "0")}•
                       </span>
                       <h3 className="text-lg md:text-[15px] text-gray-200 font-semibold">
                         {msg.name}
