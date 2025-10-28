@@ -44,7 +44,7 @@ const Contact = () => {
 
         <SplitText
           text="Let's start a"
-          className="text-5xl lg:text-5xl font-medium text-center lg:text-left leading-[1.1]" // Increase line-height slightly
+          className="text-5xl lg:text-5xl font-medium text-center lg:text-left leading-[1.1]" 
           delay={100}
           duration={0.4}
           ease="power2.out"
