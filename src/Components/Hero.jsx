@@ -6,11 +6,11 @@ const Hero = () => {
   return (
     <div
       id="home"
-      className="flex flex-col justify-center text-white min-h-[700px] pt-20 w-full"
+      className="flex flex-col justify-center text-white min-h-[700px]  md:pt-20 w-full"
     >
       <div className="w-full max-w-8xl h-full pb-5 mx-auto">
         {/* Header Section */}
-        <div className="pt-[7vh] px-4 sm:px-8 md:px-12 lg:px-[70px]">
+        <div className="pt-[2vh] px-4 sm:px-8 md:px-12 lg:px-[70px]">
           <h2 className="text-sm uppercase flex items-center gap-3 w-full">
             <span className="w-2.5 h-2.5 rounded-full bg-green-500 animate-pulse flex-shrink-0"></span>
             Hey, it's me Paul
