@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { FaInstagram, FaLinkedin, FaGithub } from "react-icons/fa";
 import { HiOutlineMail } from "react-icons/hi";
 import me from '../assets/images/dp.jpg'
-import AboutMe from "./AboutMe";
 import SplitText from "../../Reactbits/SplitText/SplitText";
 import ContactFaq from "./ContactFaq";
 
