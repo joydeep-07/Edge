@@ -44,9 +44,9 @@ const Hero = () => {
             {["LinkedIn", "Github", "Instagram", "Gmail"].map((item) => (
               <button
                 key={item}
-                className="flex items-center gap-2 text-white text-xs font-medium uppercase transition-opacity duration-300 hover:opacity-100 group-hover:opacity-50 flex-shrink-0"
+                className="flex items-center gap-2 text-white text-[10px] sm:text-xs md:text-sm font-medium uppercase transition-opacity duration-300 hover:opacity-100 group-hover:opacity-50 flex-shrink-0"
               >
-                <ArrowUp className="w-4 h-4 rotate-45 flex-shrink-0" />
+                <ArrowUp className="w-3 h-3 sm:w-4 sm:h-4 rotate-45 flex-shrink-0" />
                 <span>{item}</span>
               </button>
             ))}
