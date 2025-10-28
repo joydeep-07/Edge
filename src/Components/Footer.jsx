@@ -11,8 +11,8 @@ const Footer = () => {
         {/* Bottom Section */}
         <div className="w-full max-w-7xl flex flex-col md:flex-row items-center justify-between border-t border-gray-800 pt-6">
           <p
-            onClick={() => navigate("/messages")}
-            className="text-sm cursor-pointer text-gray-400"
+            // onClick={() => navigate("/messages")}
+            className="text-sm text-gray-400"
           >
             © {new Date().getFullYear()} All Rights Reserved.
           </p>
