@@ -7,14 +7,13 @@ import SplitText from "../../Reactbits/SplitText/SplitText";
 import ContactFaq from "./ContactFaq";
 
 const Contact = () => {
-  // Step 1: Create state for form fields
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     message: "",
   });
 
-  // Step 2: Handle input change
+
   const handleChange = (e) => {
     const { id, value } = e.target;
     setFormData((prevData) => ({
@@ -23,11 +22,6 @@ const Contact = () => {
     }));
   };
 
-  const handleAnimationComplete = () => {
-    console.log("Animation complete!");
-  };
-
-  // Step 3: Handle form submit
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Form Data:", formData); 
