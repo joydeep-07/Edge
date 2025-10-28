@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { supabase } from "../supabaseClient"; // adjust the path if needed
+import { supabase } from "../supabaseClient";
 import SplitText from "../../Reactbits/SplitText/SplitText";
+
 const Messages = () => {
   const [messages, setMessages] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -25,26 +26,38 @@ const Messages = () => {
 
   if (loading) {
     return (
-      <div className="w-full flex justify-center items-center py-20 text-gray-400">
-        Loading messages...
+      <div className="w-full flex justify-center items-center min-h-screen bg-black">
+        <div className="flex flex-col items-center gap-4">
+          <div className="relative">
+            <div className="w-8 h-8 border-2 border-emerald-400/30 rounded-full animate-spin"></div>
+            <div className="absolute top-0 left-0 w-8 h-8 border-2 border-transparent border-t-emerald-400 rounded-full animate-spin"></div>
+          </div>
+          <span className="text-gray-400 font-light tracking-wider">
+            LOADING MESSAGES
+          </span>
+        </div>
       </div>
     );
   }
 
   return (
-    <div className="w-full min-h-screen flex justify-center items-center bg-black text-white py-16">
-      <div className="w-full max-w-7xl px-4">
-        <div className="w-7xl">
-          <div className="flex items-center gap-3 mb-4">
-            <div className="w-12 h-0.5 bg-green-500"></div>
-            <h2 className="text-sm font-semibold uppercase tracking-widest text-green-500">
-              MESSAGES
-            </h2>
+    <div className="w-full min-h-[730px] bg-black py-20 relative overflow-hidden">
+      {/* Premium Background Elements */}
+
+      <div className="relative w-full max-w-7xl mx-auto px-6">
+        {/* Premium Header Section */}
+        <div className="mb-16 pt-10">
+          <div className="flex  items-center gap-4 ">
+            <div className="w-16 h-px bg-gradient-to-r from-transparent to-green-500"></div>
+            <span className="text-xs font-medium tracking-[0.3em] text-emerald-400/80 uppercase">
+              Communications
+            </span>
+            <div className="w-16 h-px bg-gradient-to-l from-transparent to-green-500"></div>
           </div>
 
           <SplitText
             text="Your Messages"
-            className="text-5xl lg:text-5xl font-medium text-center lg:text-left leading-[1.4]"
+            className="text-6xl lg:text-7xl font-light leading-[1.4]   tracking-tight"
             delay={100}
             duration={0.4}
             ease="power2.out"
@@ -53,35 +66,72 @@ const Messages = () => {
             to={{ opacity: 1, y: 0 }}
             threshold={0.1}
             rootMargin="-100px"
-            textAlign="center"
           />
-
-          
         </div>
 
+        {/* Premium Messages Grid */}
         {messages.length === 0 ? (
-          <p className="text-gray-400 text-center">No messages found.</p>
+          <div className="text-center py-20">
+            <div className="w-24 h-24 mx-auto mb-6 rounded-full bg-white/5 flex items-center justify-center">
+              <svg
+                className="w-10 h-10 text-gray-500"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={1.5}
+                  d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2M4 13h2m8-8V4a1 1 0 00-1-1h-2a1 1 0 00-1 1v1m4 0h-4"
+                />
+              </svg>
+            </div>
+            <p className="text-gray-500 text-lg font-light italic">
+              No messages found in your inbox
+            </p>
+          </div>
         ) : (
-          <div className="grid gap-6">
+          <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-6">
             {messages.map((msg) => (
               <div
                 key={msg.id}
-                className="border border-gray-700/20 rounded-2xl p-5 bg-gray-700/20 transition-all duration-300"
+                className="group relative backdrop-blur-xl bg-gradient-to-br from-white/5 to-white/2 border border-white/10 rounded-2xl p-8 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-emerald-500/10"
               >
-                <div className="flex justify-between items-center mb-2">
-                  <h2 className="text-xl font-medium text-green-400">
-                    {msg.name}
-                  </h2>
-                  <span className="text-xs text-gray-400">
-                    {new Date(msg.created_at).toLocaleString()}
-                  </span>
+                {/* Premium Card Background Effects */}
+                <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/5 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="absolute inset-0 rounded-2xl border border-emerald-400/0 group-hover:border-emerald-400/20 transition-colors duration-500"></div>
+
+                {/* Content */}
+                <div className="relative">
+                  <div className="flex justify-between items-start mb-6">
+                    <div>
+                      <h2 className="text-xl font-semibold text-white mb-1 group-hover:text-emerald-300 transition-colors duration-300">
+                        {msg.name}
+                      </h2>
+                      <p className="text-sm text-emerald-400/80 leading-relaxed ">
+                        {msg.email}
+                      </p>
+                    </div>
+                    <span className="text-xs text-gray-500 font-light bg-white/5 rounded-full px-3 py-1">
+                      {new Date(msg.created_at).toLocaleDateString("en-US", {
+                        month: "short",
+                        day: "numeric",
+                        year: "numeric",
+                      })}
+                    </span>
+                  </div>
+
+                  <div className="relative">
+                    <div className="absolute -left-3 top-0 w-0.5 h-full bg-gradient-to-b from-emerald-400/40 to-transparent group-hover:from-emerald-400/80 transition-colors duration-300"></div>
+                    <p className="text-gray-300/90 leading-relaxed text-sm font-light pl-2">
+                      {msg.message}
+                    </p>
+                  </div>
                 </div>
-                <p className="text-gray-300 text-sm mb-1">
-                  <strong>Email:</strong> {msg.email}
-                </p>
-                <p className="text-gray-200 mt-2 leading-relaxed">
-                  {msg.message}
-                </p>
+
+                {/* Hover Glow Effect */}
+                <div className="absolute inset-0 -z-10 opacity-0 group-hover:opacity-100 blur-xl transition duration-700 bg-gradient-to-br from-emerald-400/10 to-emerald-600/5 rounded-2xl"></div>
               </div>
             ))}
           </div>
