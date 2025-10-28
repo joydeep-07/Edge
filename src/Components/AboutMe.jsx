@@ -75,16 +75,15 @@ const AboutMe = () => {
   }, []);
 
   return (
-    <section className=" relative overflow-hidden">
+    <section className="relative overflow-hidden">
       {/* Background glow layers */}
-   
       <div className="absolute inset-0">
         <div className="absolute top-1/3 left-1/4 w-96 h-50 bg-blue-500/20 rounded-full blur-[160px]"></div>
       </div>
 
-      <div className="relative flex flex-col justify-center items-center gap-16 py-28 px-6 max-w-7xl mx-auto">
+      <div className="relative flex flex-col justify-center items-center gap-16 py-28 px-4 sm:px-6 max-w-7xl mx-auto">
         {/* Section Header */}
-        <div className="text-center">
+        <div className="text-center w-full">
           <div ref={headingRef} className="opacity-0">
             <h2 className="text-sm font-semibold uppercase tracking-widest text-gray-300 mb-3">
               About Me
@@ -97,10 +96,10 @@ const AboutMe = () => {
         <div className="w-full">
           <div
             ref={textRef}
-            className="text-xl md:text-2xl text-gray-500 font-light text-center max-w-6xl mx-auto leading-relaxed md:leading-loose p-8  "
+            className="text-lg sm:text-xl md:text-2xl text-gray-500 font-light text-center max-w-6xl mx-auto leading-relaxed md:leading-loose p-4 sm:p-6 md:p-8"
           >
             {splitTextToSpans(
-              "I'm Joydeep Paul, a passionate developer and designer with over 5+ years of experience in crafting seamless user-centric digital experiences. My expertise spans across modern web design, full-stack development, and interactive user interfaces, with a strong focus on delivering high-quality, scalable, and impactful products. I’ve collaborated with some of the most innovative industry leaders to help bring their visions to life and build top-notch digital solutions that truly make a difference."
+              "I'm Joydeep Paul, a passionate developer and designer with over 5+ years of experience in crafting seamless user-centric digital experiences. My expertise spans across modern web design, full-stack development, and interactive user interfaces, with a strong focus on delivering high-quality, scalable, and impactful products. I've collaborated with some of the most innovative industry leaders to help bring their visions to life and build top-notch digital solutions that truly make a difference."
             )}
           </div>
         </div>
