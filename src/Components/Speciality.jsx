@@ -45,7 +45,7 @@ const Speciality = () => {
       <div className="absolute bottom-10 left-10 w-40 h-40 bg-[#9ef01a] rounded-full blur-3xl opacity-5"></div>
 
       {/* Main content */}
-      <div className="w-full max-w-7xl px-6 lg:px-8 flex flex-col lg:flex-row items-center lg:items-start gap-16 relative z-10">
+      <div className="w-full max-w-7xl px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row items-center lg:items-start gap-8 lg:gap-16 relative z-10">
         {/* LEFT SIDE */}
         <div className="flex-1 text-left w-full">
           <div className="flex items-center gap-3 mb-4">
@@ -57,7 +57,7 @@ const Speciality = () => {
 
           <SplitText
             text="Areas of Expertise"
-            className="text-5xl lg:text-6xl font-medium mb-12 text-white text-center lg:text-left leading-[1.1]" // Increase line-height slightly
+            className="text-4xl sm:text-5xl lg:text-6xl font-medium mb-8 lg:mb-12 text-white text-center lg:text-left leading-[1.1]"
             delay={100}
             duration={0.4}
             ease="power2.out"
@@ -69,7 +69,7 @@ const Speciality = () => {
             textAlign="center"
           />
 
-          <div className="flex flex-col lg:flex-row gap-8 w-full">
+          <div className="flex flex-col lg:flex-row gap-6 lg:gap-8 w-full">
             {/* LEFT LIST */}
             <div className="w-full lg:w-2/5 flex flex-col gap-4">
               {Object.keys(specialities).map((key) => {
@@ -79,7 +79,7 @@ const Speciality = () => {
                   <div
                     key={key}
                     onClick={() => setActive(key)}
-                    className={`group cursor-pointer p-6 rounded-2xl transition-all duration-500 ease-out border-[1.5px] ${
+                    className={`group cursor-pointer p-4 sm:p-6 rounded-2xl transition-all duration-500 ease-out border-[1.5px] ${
                       isActive
                         ? "bg-gray-900/50 border-gray-700 shadow-lg shadow-gray-500/10"
                         : "bg-gray-900/30 border-gray-800 hover:border-gray-700 hover:bg-gray-900/40"
@@ -87,15 +87,15 @@ const Speciality = () => {
                   >
                     <div className="flex items-center justify-between">
                       <h3
-                        className={`text-md flex gap-3 items-center justify-center font-medium transition-colors ${
+                        className={`text-sm sm:text-md flex gap-3 items-center justify-center font-medium transition-colors ${
                           isActive ? "text-white" : "text-gray-300"
                         }`}
                       >
-                        <FaPenNib className=" text-sm" /> <span>{title}</span>
+                        <FaPenNib className="text-sm" /> <span>{title}</span>
                       </h3>
                       <div
                         className={`transition-all duration-300 ${
-                          isActive ? " shadow-lg rotate-180" : "text-gray-400"
+                          isActive ? "shadow-lg rotate-180" : "text-gray-400"
                         }`}
                       >
                         <IoIosArrowDown />
@@ -110,7 +110,7 @@ const Speciality = () => {
                       }`}
                     >
                       <p
-                        className={`text-sm leading-relaxed ${
+                        className={`text-xs sm:text-sm leading-relaxed ${
                           isActive ? "text-gray-300" : "text-gray-400"
                         }`}
                       >
@@ -123,9 +123,9 @@ const Speciality = () => {
             </div>
 
             {/* IMAGE SIDE */}
-            <div className="w-full h-[355px] lg:w-3/5 rounded-2xl overflow-hidden border-[1.5px] border-gray-800 shadow-2xl">
-              <div className="bg-gray-900 w-full rounded-2xl overflow-hidden">
-                <div className="aspect-[16/9]">
+            <div className="w-full h-[280px] sm:h-[320px] lg:h-[355px] lg:w-3/5 rounded-2xl overflow-hidden border-[1.5px] border-gray-800 shadow-2xl">
+              <div className="bg-gray-900 w-full h-full rounded-2xl overflow-hidden">
+                <div className="w-full h-full">
                   <img
                     src={specialities[active].img}
                     alt={specialities[active].title}
@@ -144,41 +144,55 @@ const Speciality = () => {
       </div>
 
       {/* ScrollVelocity BELOW the main content, centered */}
-      <div className="relative mt-10 w-full flex justify-center overflow-hidden bg-black py-5">
+      <div className="relative mt-8 lg:mt-10 w-full flex justify-center overflow-hidden bg-black py-4 lg:py-5">
         {/* Left fade */}
-        <div className="absolute left-0 top-0 bottom-0 w-[300px] bg-gradient-to-r from-black to-transparent z-10 pointer-events-none" />
+        <div className="absolute left-0 top-0 bottom-0 w-20 sm:w-[150px] lg:w-[300px] bg-gradient-to-r from-black to-transparent z-10 pointer-events-none" />
         {/* Right fade */}
-        <div className="absolute right-0 top-0 bottom-0 w-[300px] bg-gradient-to-l from-black to-transparent z-10 pointer-events-none" />
+        <div className="absolute right-0 top-0 bottom-0 w-20 sm:w-[150px] lg:w-[300px] bg-gradient-to-l from-black to-transparent z-10 pointer-events-none" />
 
         <ScrollVelocity
           texts={[
-            <span className="flex items-center gap-4 whitespace-nowrap">
-              <span className="text-gray-400 font-medium flex items-center gap-1 px-4 py-2 bg-gray-500/20 rounded-full text-sm">
-                <SiMongodb color="#4DB33D" size={15} /> Mongo
+            <span className="flex items-center gap-2 sm:gap-4 whitespace-nowrap">
+              <span className="text-gray-400 font-medium flex items-center gap-1 px-3 sm:px-4 py-1 sm:py-2 bg-gray-500/20 rounded-full text-xs sm:text-sm">
+                <SiMongodb color="#4DB33D" size={12} className="sm:w-[15px]" />{" "}
+                Mongo
               </span>
-              <span className="text-gray-400 font-medium flex items-center gap-1 px-4 py-2 bg-gray-500/20 rounded-full text-sm">
-                <SiExpress color="yellow" size={15} /> Express
+              <span className="text-gray-400 font-medium flex items-center gap-1 px-3 sm:px-4 py-1 sm:py-2 bg-gray-500/20 rounded-full text-xs sm:text-sm">
+                <SiExpress color="yellow" size={12} className="sm:w-[15px]" />{" "}
+                Express
               </span>
-              <span className="text-gray-400 font-medium flex items-center gap-1 px-4 py-2 bg-gray-500/20 rounded-full text-sm">
-                <SiReact color="#61DBFB" size={15} /> React
+              <span className="text-gray-400 font-medium flex items-center gap-1 px-3 sm:px-4 py-1 sm:py-2 bg-gray-500/20 rounded-full text-xs sm:text-sm">
+                <SiReact color="#61DBFB" size={12} className="sm:w-[15px]" />{" "}
+                React
               </span>
-              <span className="text-gray-400 font-medium flex items-center gap-1 px-4 py-2 bg-gray-500/20 rounded-full text-sm">
-                <SiNodedotjs color="#8CC84B" size={15} /> Node
+              <span className="text-gray-400 font-medium flex items-center gap-1 px-3 sm:px-4 py-1 sm:py-2 bg-gray-500/20 rounded-full text-xs sm:text-sm">
+                <SiNodedotjs
+                  color="#8CC84B"
+                  size={12}
+                  className="sm:w-[15px]"
+                />{" "}
+                Node
               </span>
-              <span className="text-gray-400 font-medium flex items-center gap-1 px-4 py-2 bg-gray-500/20 rounded-full text-sm">
-                <SiHtml5 color="#E34F26" size={15} /> HTML
+              <span className="text-gray-400 font-medium flex items-center gap-1 px-3 sm:px-4 py-1 sm:py-2 bg-gray-500/20 rounded-full text-xs sm:text-sm">
+                <SiHtml5 color="#E34F26" size={12} className="sm:w-[15px]" />{" "}
+                HTML
               </span>
-              <span className="text-gray-400 font-medium flex items-center gap-1 px-4 py-2 bg-gray-500/20 rounded-full text-sm">
-                <SiCss3 color="#1572B6" size={15} /> CSS
+              <span className="text-gray-400 font-medium flex items-center gap-1 px-3 sm:px-4 py-1 sm:py-2 bg-gray-500/20 rounded-full text-xs sm:text-sm">
+                <SiCss3 color="#1572B6" size={12} className="sm:w-[15px]" /> CSS
               </span>
-              <span className="text-gray-400 font-medium m-2 flex items-center gap-1 px-4 py-2 bg-gray-500/20 rounded-full text-sm">
-                <SiTailwindcss color="#38BDF8" size={15} /> Tailwind
+              <span className="text-gray-400 font-medium m-1 sm:m-2 flex items-center gap-1 px-3 sm:px-4 py-1 sm:py-2 bg-gray-500/20 rounded-full text-xs sm:text-sm">
+                <SiTailwindcss
+                  color="#38BDF8"
+                  size={12}
+                  className="sm:w-[15px]"
+                />{" "}
+                Tailwind
               </span>
             </span>,
           ]}
           velocity={100}
           parallaxClassName="w-full overflow-hidden"
-          scrollerClassName="flex items-center text-sm md:text-sm lg:text-sm tracking-widest drop-shadow-lg"
+          scrollerClassName="flex items-center text-xs sm:text-sm lg:text-sm tracking-widest drop-shadow-lg"
           numCopies={10}
           stiffness={200}
         />
