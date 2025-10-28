@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import { FaInstagram, FaLinkedin, FaGithub } from "react-icons/fa";
 import { HiOutlineMail } from "react-icons/hi";
-import me from '../assets/images/dp.jpg'
+import me from "../assets/images/dp.jpg";
 import SplitText from "../../Reactbits/SplitText/SplitText";
 import ContactFaq from "./ContactFaq";
 import { supabase } from "../supabaseClient";
+import { toast } from "sonner"; // ✅ Import Sonner toast
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -12,7 +13,6 @@ const Contact = () => {
     email: "",
     message: "",
   });
-
 
   const handleChange = (e) => {
     const { id, value } = e.target;
@@ -22,30 +22,29 @@ const Contact = () => {
     }));
   };
 
- const handleSubmit = async (e) => {
-   e.preventDefault();
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-   const { name, email, message } = formData;
+    const { name, email, message } = formData;
 
-   if (!name || !email || !message) {
-     alert("Please fill all fields");
-     return;
-   }
+    if (!name || !email || !message) {
+      toast.error("Please fill all fields"); // 🚫 Replaced alert
+      return;
+    }
 
-   const { data, error } = await supabase
-     .from("Contacts") 
-     .insert([{ name, email, message }]);
+    const { data, error } = await supabase
+      .from("Contacts")
+      .insert([{ name, email, message }]);
 
-   if (error) {
-     console.error("Supabase error:", error.message);
-     alert("Something went wrong! Check the console.");
-   } else {
-     console.log("Data inserted successfully:", data);
-     alert("Message sent successfully!");
-     setFormData({ name: "", email: "", message: "" });
-   }
- };
-
+    if (error) {
+      console.error("Supabase error:", error.message);
+      toast.error("Something went wrong! Please check the console."); // ⚠️ Replaced alert
+    } else {
+      console.log("Data inserted successfully:", data);
+      toast.success("Message sent successfully!"); // ✅ Replaced alert
+      setFormData({ name: "", email: "", message: "" });
+    }
+  };
 
   return (
     <div className="flex flex-col justify-center items-center pt-30 text-white">
@@ -60,7 +59,7 @@ const Contact = () => {
 
         <SplitText
           text="Let's start a"
-          className="text-5xl lg:text-5xl font-medium text-center lg:text-left leading-[1.1]" 
+          className="text-5xl lg:text-5xl font-medium text-center lg:text-left leading-[1.1]"
           delay={100}
           duration={0.4}
           ease="power2.out"
@@ -72,7 +71,6 @@ const Contact = () => {
           textAlign="center"
         />
 
-        {/* Green second line */}
         <div className="text-green-500 mt-1 leading-[1.1]">
           <SplitText
             text="Project Together"
@@ -167,10 +165,9 @@ const Contact = () => {
           </form>
         </div>
 
-        {/* Right Box - Decorative / Equal Height */}
+        {/* Right Box */}
         <div className="right w-1/2">
           <div className="w-full h-[330px] rounded-2xl bg-gray-900/50 flex flex-col items-start p-6 space-y-4">
-            {/* Batch */}
             <div className="flex items-center gap-2 bg-green-600/30 px-4 py-2 rounded-full">
               <span className="h-2 w-2 rounded-full animate-pulse bg-green-500"></span>
               <span className="text-xs font-medium text-white">
@@ -178,7 +175,6 @@ const Contact = () => {
               </span>
             </div>
 
-            {/* Profile Image */}
             <div className="border border-gray-700/80 p-3 rounded-full">
               <img
                 className="h-24 w-24 rounded-full border border-gray-500 object-cover"
@@ -187,14 +183,12 @@ const Contact = () => {
               />
             </div>
 
-            {/* Description */}
             <p className="text-gray-200 text-sm">
               My inbox is always open, Whether you have a project or just want
               to say Hi. I would love to hear from you. Feel free to contact me
               and I'll get back to you.
             </p>
 
-            {/* Social Media Icons */}
             <div className="flex gap-4 mt-2">
               <a
                 href="https://instagram.com"
@@ -231,7 +225,7 @@ const Contact = () => {
         </div>
       </div>
 
-      <ContactFaq/>
+      <ContactFaq />
     </div>
   );
 };
