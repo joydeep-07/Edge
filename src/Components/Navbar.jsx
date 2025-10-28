@@ -14,19 +14,14 @@ const Navbar = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  // ✅ Click logo → navigate home or scroll smoothly to top
   const handleLogoClick = () => {
     const lenis = window.__lenisInstance;
 
     if (location.pathname === "/") {
-      // already on home → just smooth scroll to top
       if (lenis) lenis.scrollTo(0, { duration: 1.2 });
       else window.scrollTo({ top: 0, behavior: "smooth" });
     } else {
-      // navigate to home
       navigate("/");
-
-      // after navigation, start smooth scroll to top (slight delay to allow render)
       setTimeout(() => {
         if (lenis) lenis.scrollTo(0, { duration: 1.2 });
         else window.scrollTo({ top: 0, behavior: "smooth" });
@@ -41,7 +36,9 @@ const Navbar = () => {
       once: true,
     });
 
-    // GSAP navbar animation
+    // ✅ Disable GSAP + ScrollTrigger on mobile
+    if (window.innerWidth < 768) return;
+
     const ctx = gsap.context(() => {
       gsap.to(navRef.current, {
         width: "75%",
@@ -111,16 +108,19 @@ const Navbar = () => {
     }
   };
 
+  // ✅ Responsive classes
+  const navClass =
+    "top-0 left-1/2 transform -translate-x-1/2 z-50 bg-transparent border border-transparent backdrop-blur-[2px] transition-all duration-500";
+
   return (
     <nav
       ref={navRef}
-      className="fixed top-0 left-1/2 transform -translate-x-1/2 z-50 
-                 bg-transparent border border-transparent backdrop-blur-[2px] 
-                 transition-all duration-500"
+      className={`${
+        window.innerWidth < 768 ? "relative" : "fixed"
+      } ${navClass}`}
       style={{ width: "100%" }}
     >
       <div className="max-w-8xl mx-auto flex justify-between items-center h-[70px] px-6 md:px-20">
-        {/* ✅ Logo with smooth scroll + route change */}
         <div
           onClick={handleLogoClick}
           className="flex items-center justify-center cursor-pointer navbar-logo"
@@ -132,7 +132,7 @@ const Navbar = () => {
           />
         </div>
 
-        {/* Desktop Links - Only visible on md screens and up */}
+        {/* Desktop Links */}
         <ul className="hidden md:flex items-center gap-12 text-gray-200 font-medium tracking-wide">
           {navItems.map((item, i) => (
             <li
@@ -155,10 +155,8 @@ const Navbar = () => {
           ))}
         </ul>
 
-        {/* Mobile: Completely hidden navigation - only logo remains */}
-        <div className="md:hidden">
-          {/* Empty div to maintain flex layout on mobile */}
-        </div>
+        {/* Mobile placeholder (only logo visible) */}
+        <div className="md:hidden"></div>
       </div>
     </nav>
   );
