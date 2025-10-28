@@ -5,6 +5,7 @@ import Home from "./Pages/Home";
 import Contact from "./Components/Contact";
 import Root from "./layout/Root";
 import ScrollToTop from "./utils/ScrollToTop";
+import Messages from "./Components/Messages";
 
 const App = () => {
   useEffect(() => {
@@ -41,6 +42,7 @@ const App = () => {
         <Route path="/" element={<Root />}>
           <Route index element={<Home />} />
           <Route path="contact" element={<Contact />} />
+          <Route path="messages" element={<Messages />} />
         </Route>
       </Routes>
     </Router>
