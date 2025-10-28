@@ -132,7 +132,7 @@ const Navbar = () => {
           />
         </div>
 
-        {/* Desktop Links */}
+        {/* Desktop Links - Only visible on md screens and up */}
         <ul className="hidden md:flex items-center gap-12 text-gray-200 font-medium tracking-wide">
           {navItems.map((item, i) => (
             <li
@@ -155,18 +155,10 @@ const Navbar = () => {
           ))}
         </ul>
 
-        {/* Mobile Links */}
-        <ul className="flex md:hidden items-center gap-6 text-gray-200 text-sm font-medium">
-          {navItems.map((item, i) => (
-            <li
-              key={i}
-              onClick={() => scrollToSection(item)}
-              className="cursor-pointer hover:text-gray-100 transition"
-            >
-              {item}
-            </li>
-          ))}
-        </ul>
+        {/* Mobile: Completely hidden navigation - only logo remains */}
+        <div className="md:hidden">
+          {/* Empty div to maintain flex layout on mobile */}
+        </div>
       </div>
     </nav>
   );
