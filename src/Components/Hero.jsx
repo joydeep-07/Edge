@@ -28,8 +28,9 @@ const Hero = () => {
 
         {/* Description Section with Border Line */}
         <div className="flex flex-col sm:flex-row items-start sm:items-center mt-6 sm:mt-8">
-          <div className="border-b border-gray-700 mx-4 sm:mx-0 sm:ml-[70px] w-full sm:w-2xl flex-grow sm:flex-grow-0"></div>
-          <p className="p-6 sm:p-10 text-gray-300 text-base sm:text-lg leading-relaxed max-w-4xl">
+          <div className="hidden sm:block border-b border-gray-700 mx-4 sm:mx-0 sm:ml-[70px] w-full sm:w-2xl flex-grow sm:flex-grow-0"></div>
+
+          <p className="px-4 sm:px-8 md:px-10 py-6 text-gray-300 text-sm sm:text-base md:text-lg leading-relaxed max-w-4xl  sm:text-left mx-auto">
             I work with brands globally to build pixel-perfect, engaging, and
             accessible digital <br className="hidden sm:block" />
             experiences that drive results and achieve business goals.
