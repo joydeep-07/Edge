@@ -44,10 +44,10 @@ const Messages = () => {
   }
 
   return (
-    <div className="w-full border min-h-[90vh] bg-black py-20 relative overflow-hidden flex  justify-center items-start">
+    <div className="w-full min-h-[90vh] py-25 relative overflow-hidden flex  justify-center items-start">
       <div className="w-full max-w-7xl mx-auto flex flex-col  gap-10 px-6 items-start">
         {/* LEFT: Sticky Header */}
-        <div className=" border p-4">
+        <div className=" p-4">
           <div className="flex items-center gap-3 mb-4">
             <div className="w-12 h-0.5 bg-green-500"></div>
             <h2 className="text-sm font-semibold uppercase tracking-widest text-green-500">
