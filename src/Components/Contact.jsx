@@ -191,7 +191,7 @@ const Contact = () => {
 
             <div className="flex gap-4 mt-2 justify-center lg:justify-start">
               <a
-                href="https://instagram.com"
+                href="https://www.instagram.com/mr.paul_16"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-pink-500 transition-colors duration-300"
@@ -199,7 +199,7 @@ const Contact = () => {
                 <FaInstagram size={20} className="sm:w-6 sm:h-6" />
               </a>
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/joydeep-paul-06b37926a"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-blue-500 transition-colors duration-300"
@@ -207,7 +207,7 @@ const Contact = () => {
                 <FaLinkedin size={20} className="sm:w-6 sm:h-6" />
               </a>
               <a
-                href="https://github.com"
+                href="https://github.com/joydeep-07"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-green-500 transition-colors duration-300"
@@ -215,7 +215,7 @@ const Contact = () => {
                 <FaGithub size={20} className="sm:w-6 sm:h-6" />
               </a>
               <a
-                href="mailto:example@email.com"
+                href="mailto:joydeeprnp8821@gmail.com"
                 className="text-gray-400 hover:text-yellow-400 transition-colors duration-300"
               >
                 <HiOutlineMail size={20} className="sm:w-6 sm:h-6" />
