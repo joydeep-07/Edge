@@ -41,13 +41,25 @@ const Hero = () => {
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center px-4 sm:px-8 md:px-12 lg:px-[70px] gap-6 sm:gap-0">
           {/* Social Links */}
           <div className="flex flex-wrap gap-3 sm:gap-5 py-2 sm:py-5 w-full sm:w-fit px-2 sm:px-3 group justify-center sm:justify-start">
-            {["LinkedIn", "Github", "Instagram", "Gmail"].map((item) => (
+            {[
+              {
+                name: "LinkedIn",
+                url: "https://www.linkedin.com/in/joydeep-paul-06b37926a",
+              },
+              { name: "Github", url: "https://github.com/joydeep-07" },
+              {
+                name: "Instagram",
+                url: "https://www.instagram.com/mr.paul_16",
+              },
+              { name: "Gmail", url: "mailto:joydeeprnp8821@gmail.com" },
+            ].map((item) => (
               <button
-                key={item}
+                key={item.name}
+                onClick={() => window.open(item.url, "_blank")}
                 className="flex items-center gap-2 text-white text-[10px] sm:text-xs md:text-sm font-medium uppercase transition-opacity duration-300 hover:opacity-100 group-hover:opacity-50 flex-shrink-0"
               >
                 <ArrowUp className="w-3 h-3 sm:w-4 sm:h-4 rotate-45 flex-shrink-0" />
-                <span>{item}</span>
+                <span>{item.name}</span>
               </button>
             ))}
           </div>
