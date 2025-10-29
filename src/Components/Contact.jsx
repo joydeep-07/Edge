@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { FaInstagram, FaLinkedin, FaGithub } from "react-icons/fa";
 import { HiOutlineMail } from "react-icons/hi";
 import me from "../assets/images/dp.jpg";
@@ -6,6 +6,8 @@ import SplitText from "../../Reactbits/SplitText/SplitText";
 import ContactFaq from "./ContactFaq";
 import { supabase } from "../supabaseClient";
 import { toast } from "sonner";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -13,6 +15,15 @@ const Contact = () => {
     email: "",
     message: "",
   });
+
+  useEffect(() => {
+    AOS.init({
+      duration: 800,
+      easing: "ease-out-cubic",
+      once: true,
+      offset: 100,
+    });
+  }, []);
 
   const handleChange = (e) => {
     const { id, value } = e.target;
@@ -94,7 +105,7 @@ const Contact = () => {
         <div className="left w-full lg:w-1/2 rounded-2xl p-4 sm:p-6 lg:p-8">
           <form className="space-y-5" onSubmit={handleSubmit}>
             {/* Name */}
-            <div>
+            <div data-aos="fade-up" data-aos-delay="100">
               <label
                 htmlFor="name"
                 className="block text-sm text-gray-300 mb-2"
@@ -112,7 +123,7 @@ const Contact = () => {
             </div>
 
             {/* Email */}
-            <div>
+            <div data-aos="fade-up" data-aos-delay="200">
               <label
                 htmlFor="email"
                 className="block text-sm text-gray-300 mb-2"
@@ -130,7 +141,7 @@ const Contact = () => {
             </div>
 
             {/* Message */}
-            <div>
+            <div data-aos="fade-up" data-aos-delay="300">
               <label
                 htmlFor="message"
                 className="block text-sm text-gray-300 mb-2"
@@ -148,25 +159,31 @@ const Contact = () => {
             </div>
 
             {/* Submit Button */}
-            <button
-              type="submit"
-              className="w-full sm:w-auto px-8 py-4 bg-transparent border-2 border-white/30 text-white font-medium tracking-widest rounded-full hover:border-white/70 transition-all duration-700 group relative overflow-hidden"
-            >
-              <span className="absolute inset-0 bg-white/0 opacity-0 group-hover:opacity-100 transition-opacity duration-1000 -translate-x-full group-hover:translate-x-0"></span>
-              <span className="relative flex items-center justify-center">
-                <span className="opacity-100 group-hover:opacity-0 text-white translate-y-0 group-hover:-translate-y-2 transition-all duration-500 flex items-center space-x-3">
-                  <span className="text-xs sm:text-sm">SEND</span>
+            <div data-aos="fade-up" data-aos-delay="400">
+              <button
+                type="submit"
+                className="w-full sm:w-auto px-8 py-4 bg-transparent border-2 border-white/30 text-white font-medium tracking-widest rounded-full hover:border-white/70 transition-all duration-700 group relative overflow-hidden"
+              >
+                <span className="absolute inset-0 bg-white/0 opacity-0 group-hover:opacity-100 transition-opacity duration-1000 -translate-x-full group-hover:translate-x-0"></span>
+                <span className="relative flex items-center justify-center">
+                  <span className="opacity-100 group-hover:opacity-0 text-white translate-y-0 group-hover:-translate-y-2 transition-all duration-500 flex items-center space-x-3">
+                    <span className="text-xs sm:text-sm">SEND</span>
+                  </span>
+                  <span className="absolute inset-0 text-white opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-500 flex items-center justify-center space-x-3">
+                    <span className="text-xs sm:text-sm">MESSAGE</span>
+                  </span>
                 </span>
-                <span className="absolute inset-0 text-white opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-500 flex items-center justify-center space-x-3">
-                  <span className="text-xs sm:text-sm">MESSAGE</span>
-                </span>
-              </span>
-            </button>
+              </button>
+            </div>
           </form>
         </div>
 
         {/* Right Box */}
-        <div className="right w-full lg:w-1/2">
+        <div
+          className="right w-full lg:w-1/2"
+          data-aos="fade-up"
+          data-aos-delay="100"
+        >
           <div className="w-full h-auto min-h-[330px] rounded-2xl bg-gray-900/50 flex flex-col items-center lg:items-start p-6 space-y-4">
             <div className="flex items-center gap-2 bg-green-600/30 px-4 py-2 rounded-full">
               <span className="h-2 w-2 rounded-full animate-pulse bg-green-500"></span>
