@@ -9,7 +9,7 @@ import { useNavigate, useLocation } from "react-router-dom";
 gsap.registerPlugin(ScrollTrigger);
 
 const Navbar = () => {
-  const navItems = ["Home", "Expertise", "Projects", "Experience"];
+  const navItems = ["Home", "Expertise", "Projects"];
   const navRef = useRef(null);
   const navigate = useNavigate();
   const location = useLocation();
@@ -36,7 +36,6 @@ const Navbar = () => {
       once: true,
     });
 
-    // ✅ Disable GSAP + ScrollTrigger on mobile
     if (window.innerWidth < 768) return;
 
     const ctx = gsap.context(() => {
@@ -54,7 +53,6 @@ const Navbar = () => {
           start: "top top",
           end: "+=100",
           scrub: true,
-          toggleActions: "play reverse play reverse",
         },
       });
 
@@ -87,28 +85,45 @@ const Navbar = () => {
   }, []);
 
   const scrollToSection = (section) => {
-    if (section === "Home") {
-      const lenis = window.__lenisInstance;
-      if (lenis) lenis.scrollTo(0, { duration: 1.2 });
-      else window.scrollTo({ top: 0, behavior: "smooth" });
-      return;
-    }
+    const lenis = window.__lenisInstance;
 
-    const idMap = {
-      Projects: "projects",
-      Expertise: "expertise",
-      Qualification: "about",
+    const scrollAction = () => {
+      if (section === "Home") {
+        if (lenis) lenis.scrollTo(0, { duration: 1.2 });
+        else window.scrollTo({ top: 0, behavior: "smooth" });
+        return;
+      }
+
+      const idMap = {
+        Projects: "projects",
+        Expertise: "expertise",
+        Experience: "experience",
+      };
+
+      const element = document.getElementById(idMap[section]);
+      if (element) {
+        if (lenis) lenis.scrollTo(element, { duration: 1.2 });
+        else element.scrollIntoView({ behavior: "smooth" });
+      }
     };
 
-    const element = document.getElementById(idMap[section]);
-    if (element) {
-      const lenis = window.__lenisInstance;
-      if (lenis) lenis.scrollTo(element, { duration: 1.2 });
-      else element.scrollIntoView({ behavior: "smooth" });
+    if (location.pathname !== "/") {
+      navigate("/");
+      setTimeout(() => scrollAction(), 600);
+    } else {
+      scrollAction();
     }
   };
 
-  // ✅ Responsive classes
+  const handleContactClick = () => {
+    const lenis = window.__lenisInstance;
+    navigate("/contact");
+    setTimeout(() => {
+      if (lenis) lenis.scrollTo(0, { duration: 1 });
+      else window.scrollTo({ top: 0, behavior: "smooth" });
+    }, 100);
+  };
+
   const navClass =
     "top-0 left-1/2 transform -translate-x-1/2 z-50 bg-transparent border border-transparent backdrop-blur-[2px] transition-all duration-500";
 
@@ -121,6 +136,7 @@ const Navbar = () => {
       style={{ width: "100%" }}
     >
       <div className="max-w-8xl mx-auto flex justify-between items-center h-[70px] px-6 md:px-20">
+        {/* Logo */}
         <div
           onClick={handleLogoClick}
           className="flex items-center justify-center cursor-pointer navbar-logo"
@@ -132,7 +148,7 @@ const Navbar = () => {
           />
         </div>
 
-        {/* Desktop Links */}
+        {/* Desktop Nav Links */}
         <ul className="hidden md:flex items-center gap-12 text-gray-200 font-medium tracking-wide">
           {navItems.map((item, i) => (
             <li
@@ -153,9 +169,27 @@ const Navbar = () => {
               </span>
             </li>
           ))}
+
+          {/* ✅ Contact button with same animation */}
+          <li
+            data-aos="fade-up"
+            data-aos-delay={navItems.length * 50}
+            onClick={handleContactClick}
+            className="relative group h-7 leading-7 overflow-hidden cursor-pointer select-none"
+          >
+            <span className="block text-sm transition-transform duration-500 ease-out group-hover:-translate-y-full group-hover:text-gray-100">
+              Contact
+            </span>
+            <span
+              className="block text-sm absolute inset-0 translate-y-full transition-transform duration-500 ease-out group-hover:translate-y-0 text-gray-100"
+              aria-hidden="true"
+            >
+              Contact
+            </span>
+          </li>
         </ul>
 
-        {/* Mobile placeholder (only logo visible) */}
+        {/* Mobile placeholder */}
         <div className="md:hidden"></div>
       </div>
     </nav>
