@@ -2,7 +2,7 @@ export const faqData = [
   {
     question: "What technologies do you use for web development?",
     answer:
-      "I primarily work with the MERN stack — MongoDB, Express, React, and Node.js — to build fast, scalable, and modern web applications. I also use tools like Tailwind CSS, GSAP, and Framer Motion for styling and animations.",
+      "I primarily work with the MERN stack, MongoDB, Express, React, and Node.js to build fast, scalable, and modern web applications. I also use tools like Tailwind CSS, GSAP, and Framer Motion for styling and animations.",
   },
   {
     question: "How much does a website cost?",
