@@ -17,48 +17,67 @@ const Footer = () => {
 
           {/* Social Icons */}
           <ul className="flex gap-4 xs:gap-5 sm:gap-5 text-base xs:text-lg order-1 sm:order-2">
+            {/* Instagram */}
             <li>
               <a
-                href="https://instagram.com"
+                href="https://www.instagram.com/mr.paul_16"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-pink-500 transition-colors duration-300 block p-1"
                 aria-label="Instagram"
               >
-                <FaInstagram className="w-5 h-5 xs:w-6 xs:h-6" />
+                <FaInstagram className="hidden sm:block w-5 h-5 xs:w-6 xs:h-6" />
+                <span className="sm:hidden text-xs uppercase tracking-wide">
+                  Instagram
+                </span>
               </a>
             </li>
+
+            {/* Twitter (X) */}
             <li>
               <a
-                href="https://x.com"
+                href="https://x.com/Paul__here"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-gray-300 transition-colors duration-300 block p-1"
                 aria-label="Twitter"
               >
-                <FaXTwitter className="w-5 h-5 xs:w-6 xs:h-6" />
+                <FaXTwitter className="hidden sm:block w-5 h-5 xs:w-6 xs:h-6" />
+                <span className="sm:hidden text-xs uppercase tracking-wide">
+                  Twitter
+                </span>
               </a>
             </li>
+
+            {/* LinkedIn */}
             <li>
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/joydeep-paul-06b37926a"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-blue-500 transition-colors duration-300 block p-1"
                 aria-label="LinkedIn"
               >
-                <FaLinkedin className="w-5 h-5 xs:w-6 xs:h-6" />
+                <FaLinkedin className="hidden sm:block w-5 h-5 xs:w-6 xs:h-6" />
+                <span className="sm:hidden text-xs uppercase tracking-wide">
+                  LinkedIn
+                </span>
               </a>
             </li>
+
+            {/* GitHub */}
             <li>
               <a
-                href="https://github.com"
+                href="https://github.com/joydeep-07"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-green-500 transition-colors duration-300 block p-1"
                 aria-label="GitHub"
               >
-                <FaGithub className="w-5 h-5 xs:w-6 xs:h-6" />
+                <FaGithub className="hidden sm:block w-5 h-5 xs:w-6 xs:h-6" />
+                <span className="sm:hidden text-xs uppercase tracking-wide">
+                  GitHub
+                </span>
               </a>
             </li>
           </ul>
