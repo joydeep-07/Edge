@@ -1,8 +1,18 @@
 import React from "react";
 import me from "../assets/images/full.jpg";
 import CircularText from "../../Reactbits/CircularText/CircularText";
-
+import { toast } from "sonner";
 const Me = () => {
+
+  const handleDownload = () => {
+    const link = document.createElement("a");
+    link.href = "../Resume.pdf";
+    link.download = "Joydeep_Paul_Resume.pdf";
+    link.click();
+
+    toast.info("Downloading Resume...")
+  };
+
   return (
     <section className="flex justify-center items-center pb-5 pt-26 bg-black text-white">
       <div className="max-w-7xl w-full flex flex-col lg:flex-row items-center gap-8 lg:gap-20 px-4 sm:px-6 md:px-8 lg:px-12">
@@ -43,7 +53,7 @@ const Me = () => {
           </p>
 
           <div className="flex justify-center lg:justify-start">
-            <button className="px-8 xs:px-10 sm:px-12 py-3 xs:py-4 bg-transparent border-2 border-white/30 text-white font-medium tracking-widest rounded-full hover:border-white/70 transition-all duration-700 group relative overflow-hidden min-w-32 xs:min-w-36">
+            <button onClick={handleDownload} className="px-8 xs:px-10 sm:px-12 py-3 xs:py-4 bg-transparent border-2 border-white/30 text-white font-medium tracking-widest rounded-full hover:border-white/70 transition-all duration-700 group relative overflow-hidden min-w-32 xs:min-w-36">
               {/* Sliding gradient overlay */}
               <span className="absolute inset-0 bg-white/0 opacity-0 group-hover:opacity-100 transition-opacity duration-1000 -translate-x-full group-hover:translate-x-0"></span>
 
