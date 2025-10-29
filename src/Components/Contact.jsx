@@ -124,7 +124,7 @@ const Contact = () => {
                 type="email"
                 value={formData.email}
                 onChange={handleChange}
-                placeholder="you@example.com"
+                placeholder="Enter your email"
                 className="w-full px-4 py-3 sm:py-2 border-b border-gray-700 bg-transparent outline-none placeholder-gray-500 transition-all duration-300 focus:border-green-500"
               />
             </div>
