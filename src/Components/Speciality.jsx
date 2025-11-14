@@ -21,17 +21,17 @@ const Speciality = () => {
     web: {
       title: "Web Development",
       desc: "Building fast, secure, and responsive websites using the latest technologies in the MERN stack to deliver seamless digital experiences.",
-      img: "https://i.pinimg.com/1200x/ed/39/ca/ed39cac2ba4004dca1765efd804523b5.jpg",
+      img: "https://i.pinimg.com/736x/7b/fd/87/7bfd875e85fbbed980e9df59bcde8579.jpg",
     },
     uiux: {
       title: "UI / UX Design",
       desc: "Designing intuitive and visually engaging user interfaces with a focus on accessibility, usability, and delightful user interactions.",
-      img: "https://i.pinimg.com/1200x/00/91/1e/00911e0f8ad3de29711589afb958932a.jpg",
+      img: "https://i.pinimg.com/736x/7b/fd/87/7bfd875e85fbbed980e9df59bcde8579.jpg",
     },
     marketing: {
       title: "Digital Marketing",
       desc: "Creating data-driven marketing campaigns that boost online visibility, engagement, and brand growth through SEO and social media strategies.",
-      img: "https://i.pinimg.com/1200x/ce/3f/62/ce3f62e7bdc50c84332bbd2b0c70c8df.jpg",
+      img: "https://i.pinimg.com/736x/7b/fd/87/7bfd875e85fbbed980e9df59bcde8579.jpg",
     },
   };
 
