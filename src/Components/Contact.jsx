@@ -8,6 +8,7 @@ import { supabase } from "../supabaseClient";
 import { toast } from "sonner";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import ReviewForm from "./ReviewForm";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -241,6 +242,8 @@ const Contact = () => {
           </div>
         </div>
       </div>
+
+      {/* <ReviewForm/> */}
 
       <ContactFaq />
     </div>
