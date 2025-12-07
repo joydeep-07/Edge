@@ -170,7 +170,7 @@ const Navbar = () => {
             </li>
           ))}
 
-          {/* ✅ Contact button with same animation */}
+          {/* Contact button with same animation */}
           <li
             data-aos="fade-up"
             data-aos-delay={navItems.length * 50}
