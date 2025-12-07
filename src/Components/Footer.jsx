@@ -15,7 +15,7 @@ const Footer = () => {
 
         
           <ul className="hidden sm:flex gap-4 xs:gap-5 sm:gap-5 text-base xs:text-lg order-1 sm:order-2">
-            {/* Instagram */}
+          
             <li>
               <a
                 href="https://www.instagram.com/mr.paul_16"
