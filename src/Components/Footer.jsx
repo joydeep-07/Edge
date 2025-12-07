@@ -9,7 +9,6 @@ const Footer = () => {
     <>
       <footer className="bg-black text-gray-300 flex flex-col items-center justify-center pb-6 sm:pb-8 px-4 xs:px-6 space-y-8 sm:space-y-10">
         <div className="w-full max-w-7xl flex flex-col sm:flex-row items-center justify-between border-t border-gray-800 pt-4 sm:pt-6">
-          {/* Copyright Text (visible on all screens) */}
           <p className="text-xs xs:text-sm text-gray-400 text-center sm:text-left mb-3 sm:m-1 order-2 sm:order-1">
             © {new Date().getFullYear()} All Rights Reserved.
           </p>
