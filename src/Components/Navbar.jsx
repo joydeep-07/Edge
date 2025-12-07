@@ -136,7 +136,7 @@ const Navbar = () => {
       style={{ width: "100%" }}
     >
       <div className="max-w-8xl mx-auto flex justify-between items-center h-[70px] px-6 md:px-20">
-        {/* Logo */}
+        {/*Website Logo */}
         <div
           onClick={handleLogoClick}
           className="flex items-center justify-center cursor-pointer navbar-logo"
