@@ -54,7 +54,7 @@ const Footer = () => {
               </a>
             </li>
 
-            {/* GitHub */}
+           
             <li>
               <a
                 href="https://github.com/joydeep-07"
