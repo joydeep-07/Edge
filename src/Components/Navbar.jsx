@@ -148,7 +148,7 @@ const Navbar = () => {
           />
         </div>
 
-        {/* Desktop Nav Links */}
+        {/* Nav Links */}
         <ul className="hidden md:flex items-center gap-12 text-gray-200 font-medium tracking-wide">
           {navItems.map((item, i) => (
             <li
