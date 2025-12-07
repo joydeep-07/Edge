@@ -28,7 +28,7 @@ const Footer = () => {
               </a>
             </li>
 
-            {/* Twitter (X) */}
+           
             <li>
               <a
                 href="https://x.com/Paul__here"
