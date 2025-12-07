@@ -41,7 +41,7 @@ const Footer = () => {
               </a>
             </li>
 
-            {/* LinkedIn */}
+          
             <li>
               <a
                 href="https://www.linkedin.com/in/joydeep-paul-06b37926a"
