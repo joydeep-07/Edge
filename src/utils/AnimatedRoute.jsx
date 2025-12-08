@@ -30,8 +30,6 @@ const pageVariants = {
 
 const AnimatedRoute = () => {
   const location = useLocation();
-
-  // Always scroll to top smoothly after navigation
   useEffect(() => {
     if (window.lenis) {
       
