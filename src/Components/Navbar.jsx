@@ -170,7 +170,6 @@ const Navbar = () => {
             </li>
           ))}
 
-          {/* Contact button with same animation */}
           <li
             data-aos="fade-up"
             data-aos-delay={navItems.length * 50}
@@ -189,7 +188,6 @@ const Navbar = () => {
           </li>
         </ul>
 
-        {/* Mobile placeholder */}
         <div className="md:hidden"></div>
       </div>
     </nav>
