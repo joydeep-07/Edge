@@ -7,7 +7,7 @@ import "aos/dist/aos.css";
 const Hero = () => {
   useEffect(() => {
     Aos.init({
-      duration: 1000, // smooth timing
+      duration: 1000,
       easing: "ease-out-cubic",
       once: true, // animate only once
     });
