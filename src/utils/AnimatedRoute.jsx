@@ -5,7 +5,7 @@ import { useLocation, Outlet } from "react-router-dom";
 const pageVariants = {
   initial: {
     opacity: 0,
-    y: "60px", // slide in from bottom
+    y: "60px",
     filter: "blur(6px)",
   },
   in: {
