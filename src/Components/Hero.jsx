@@ -9,7 +9,7 @@ const Hero = () => {
     Aos.init({
       duration: 1000,
       easing: "ease-out-cubic",
-      once: true, // animate only once
+      once: true,
     });
   }, []);
 
