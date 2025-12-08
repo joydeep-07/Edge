@@ -19,7 +19,7 @@ const pageVariants = {
   },
   out: {
     opacity: 0,
-    y: "-60px", // slide slightly upward when exiting
+    y: "-60px",
     filter: "blur(6px)",
     transition: {
       duration: 0.4,
