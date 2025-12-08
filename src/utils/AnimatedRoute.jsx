@@ -34,7 +34,7 @@ const AnimatedRoute = () => {
   // Always scroll to top smoothly after navigation
   useEffect(() => {
     if (window.lenis) {
-      // If Lenis is active
+      
       window.lenis.scrollTo(0, { immediate: true });
     } else {
       window.scrollTo({ top: 0, behavior: "instant" });
