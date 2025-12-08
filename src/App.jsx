@@ -17,8 +17,6 @@ const App = () => {
       smoothTouch: false,
       touchMultiplier: 1.5,
     });
-
-    // store it globally so we can use it elsewhere
     window.__lenisInstance = lenis;
 
     function raf(time) {
