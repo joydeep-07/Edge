@@ -33,7 +33,7 @@ const App = () => {
 
   return (
     <Router>
-      {/* Scroll to top on route change */}
+     
       <ScrollToTop />
 
       <Routes>
