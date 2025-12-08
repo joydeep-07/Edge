@@ -14,7 +14,7 @@ const pageVariants = {
     filter: "blur(0px)",
     transition: {
       duration: 0.5,
-      ease: [0.25, 1, 0.5, 1], // smooth & premium
+      ease: [0.25, 1, 0.5, 1],
     },
   },
   out: {
