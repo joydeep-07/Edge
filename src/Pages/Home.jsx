@@ -8,6 +8,7 @@ import Footer from '../Components/Footer'
 import Me from '../Components/Me'
 import WorkBadge from '../Components/WorkBadge'
 import Projects from '../Components/Projects'
+import ReviewForm from '../Components/ReviewForm'
 
 const Home = () => {
   return (
@@ -18,6 +19,7 @@ const Home = () => {
       <AboutMe />
       <Speciality />
       <Projects/>
+      {/* <ReviewForm/> */}
       <WorkBadge/>
       {/* <Reviews /> */}
       {/* <Footer /> */}

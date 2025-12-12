@@ -3,9 +3,9 @@ import SplitText from "../../Reactbits/SplitText/SplitText";
 
 const ReviewForm = () => {
   return (
-    <div className="py-10 border">
+    <div className="py-10 flex flex-col justify-center items-center border">
       {/* Header */}
-      <div className="  w-7xl">
+      <div className="  w-7xl border">
         <div className="flex items-center gap-3 mb-4 lg:justify-start">
           <div className="w-8 h-0.5 bg-green-500"></div>
           <h2 className="text-sm font-semibold uppercase tracking-widest text-green-500">
@@ -43,6 +43,21 @@ const ReviewForm = () => {
           />
         </div>
       </div>
+      <form action="">
+        <div className="mt-8 w-full max-w-2xl px-4">
+          <textarea
+            className="w-full h-32 p-4 bg-gray-900 text-white rounded-lg border border-gray-700 focus:outline-none focus:ring-2 focus:ring-green-500 resize-none"   
+
+            placeholder="Write your review here..."
+          ></textarea>
+          <button
+            type="submit"
+            className="mt-4 px-6 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500"
+          >
+            Submit Review
+          </button>
+        </div>
+      </form>
     </div>
   );
 }
